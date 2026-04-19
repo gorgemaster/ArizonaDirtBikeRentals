@@ -1,0 +1,10 @@
+{
+	"compatibility_date": "2026-04-17",
+	"compatibility_flags": ["nodejs_compat"],
+	"name": "arizona-dirt-bikes",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"observability": { "enabled": true }
+}
