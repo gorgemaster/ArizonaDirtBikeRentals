@@ -17,13 +17,15 @@ const reviews = [
 ---
 <Layout title={title} description={description} canonical="https://arizonadirtbikerentals.com/">
 
-  <div class="page-hero">
-    <div class="wrap">
-      <div class="section-label">Advanced &amp; Expert Riders</div>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Advanced &amp; Expert Riders</span>
       <h1 class="display">You Should Be<br>Out Riding.</h1>
       <p class="hero-sub">Every possible terrain you can imagine is here in Wickenburg. We've been dishing out the best singletrack since 2010.</p>
+      <a href="tel:5092810156" class="btn btn-big">Call 509-281-0156</a>
     </div>
-  </div>
+  </section>
 
   <section class="intro-section">
     <div class="wrap intro-grid">
@@ -73,11 +75,58 @@ const reviews = [
 </Layout>
 
 <style>
-  .page-hero { background: var(--ink); color: var(--cream); padding: 100px 0; border-bottom: 3px solid var(--rust); }
-  .page-hero h1 { font-size: clamp(48px, 7.5vw, 108px); color: var(--cream); margin-bottom: 20px; }
-  .hero-sub { font-size: 18px; color: rgba(253,252,249,0.75); max-width: 52ch; }
-  .page-hero .section-label { color: var(--rust); }
-  .page-hero .section-label::before { background: var(--rust); }
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/images/2022/06/ADBR-Home-Slider1.jpg') center/cover no-repeat;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(95deg,
+      rgba(23,17,12,0.78) 0%,
+      rgba(23,17,12,0.55) 35%,
+      rgba(23,17,12,0.15) 65%,
+      rgba(23,17,12,0) 100%);
+  }
+  @media (max-width: 800px) {
+    .hero-bg::after {
+      background: linear-gradient(180deg,
+        rgba(23,17,12,0.85) 0%,
+        rgba(23,17,12,0.55) 55%,
+        rgba(23,17,12,0.35) 100%);
+    }
+  }
+  .hero-content {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 24px 100px;
+    width: 100%;
+  }
+  .hero h1 {
+    font-size: clamp(56px, 9.5vw, 132px);
+    max-width: 14ch;
+    margin-bottom: 26px;
+    color: var(--cream);
+    text-shadow: 0 2px 30px rgba(0,0,0,0.35);
+  }
+  .hero-sub {
+    font-size: clamp(17px, 1.8vw, 21px);
+    max-width: 48ch;
+    margin-bottom: 40px;
+    color: rgba(253,252,249,0.85);
+  }
 
   .intro-section { padding: 80px 0; background: var(--cream-deep); border-bottom: 1px solid var(--line); }
   .intro-grid { display: grid; gap: 60px; align-items: center; }
