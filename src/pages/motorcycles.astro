@@ -4,34 +4,83 @@ const title = 'Motorcycles - Arizona Dirt Bike Rentals';
 const description = 'We rent the latest Husqvarna and KTM dirt bikes in the Wickenburg, Phoenix, Arizona area. We have 2-strokes and 4-stroke motorcycles to choose from.';
 
 const bikes = [
-  { name: '2023 KTM 300 XC', img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-KTM-300-XC-2023.jpg' },
-  { name: '2023 Husqvarna 300 TE', img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-Husqvarna-300-TE-2023.jpg' },
-  { name: 'Husqvarna 450 FX', img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-Husqvarna-450-FX-2022.jpg' },
-  { name: 'KTM 150 XC-W', img: '/images/2021/12/Arizona-Dirt-Bike-Rentals-KTM-150-XC-W-2022.jpg' },
-  { name: 'Husqvarna TE 300i', img: '/images/2021/12/Arizona-Dirt-Bike-Rentals-Husqvarna-TE-300i-2022.jpg' },
-  { name: 'Kawasaki KLX 140 RL', img: '/images/2022/05/Arizona-Dirt-Bike-Rentals-Kawasaki-KLX-140-RL-2022.jpg' },
+  {
+    name: '2023 KTM 300 XC',
+    img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-KTM-300-XC-2023.jpg',
+    description: "Maximum power at the least possible weight and smooth, linear power delivery – the 2023 KTM 300 XC is set to take the Open category back to school. Churning out massive power from an engine weighing only 52.6 lb, the KTM 300 XC sets the benchmark when it comes to power-to-weight ratios.",
+    upgrades: ['Rekluse "no-stall" auto-clutch', 'Custom-tuned suspension'],
+  },
+  {
+    name: '2023 Husqvarna TE 300i',
+    img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-Husqvarna-300-TE-2023.jpg',
+    description: "With electronic fuel injection, smooth power delivery and impressive torque and power, the TE 300i retains the traits it's become renowned for, now with class-leading chassis and ergonomics, it offers an even more controllable and thrilling ride.",
+    upgrades: ['Rekluse "no-stall" auto-clutch', 'Custom-tuned suspension'],
+  },
+  {
+    name: '2023 Husqvarna TE 300',
+    img: '/images/2021/12/Arizona-Dirt-Bike-Rentals-Husqvarna-TE-300i-2022.jpg',
+    description: "With electronic fuel injection, smooth power delivery and impressive torque and power, the TE 300i retains the traits it's become renowned for, now with class-leading chassis and ergonomics, it offers an even more controllable and thrilling ride.",
+    upgrades: ['Rekluse "no-stall" auto-clutch', 'Custom tuned suspension'],
+  },
+  {
+    name: '2022 Husqvarna FX 450',
+    img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-Husqvarna-450-FX-2022.jpg',
+    description: "The pinnacle of Husqvarna offroad competition, the FX 450 uses advanced engineering techniques to position the engine closer to the center of gravity to vastly improve handling and maneuverability with class-leading ergonomics and traction control keep the rider in full control.",
+    upgrades: ['Rekluse "no-stall" auto-clutch', 'Bib Moose no-flat tire inserts', 'Tuned custom suspension'],
+  },
+  {
+    name: '2023 KTM 150 XC-W',
+    img: '/images/2021/12/Arizona-Dirt-Bike-Rentals-KTM-150-XC-W-2022.jpg',
+    description: "The 2022 KTM 150 XC-W TPI features KTM's proven transfer port injection technology, supreme agility, and surprising 2-stroke power, it helps elevate rider and machine. Light and friendly enough to be ridden by beginners or raced hard by experienced riders.",
+    upgrades: ['Rekluse "no-stall" auto-clutch', 'Custom tuned suspension'],
+  },
+  {
+    name: '2025 Husqvarna TE 150',
+    img: '/images/2025/11/2025-Husqvarna-TE-150.webp',
+    description: "Expertly assembled with the latest technical innovations to deliver best-in-class performance, this versatile machine is highly capable in the hands of both beginners and seasoned racers alike.",
+    upgrades: ['Rekluse "no-stall" auto-clutch', 'Custom tuned suspension'],
+  },
+  {
+    name: '2022 Kawasaki KLX 140 RL',
+    img: '/images/2022/05/Arizona-Dirt-Bike-Rentals-Kawasaki-KLX-140-RL-2022.jpg',
+    description: 'Perfect for bigger kids and smaller adults, the four-stroke air-cooled machine features a push-button electric starter and larger wheels (19″ front, 16″ rear) than the standard 140R. Its smooth confidence-inspiring engine utilizes a five-speed transmission to offer a user-friendly feel.',
+    upgrades: ['Rekluse "no-stall" auto-clutch'],
+  },
+  {
+    name: '2025 Honda CRF110F',
+    img: '/images/2025/02/2025-Honda-CRF110F-Alt.webp',
+    description: "This is the power sports industry's top-selling dirt bike, a model that has welcomed legions of new riders to the world of motorcycling. The CRF110F is approachable, reliable and performs well, with an automatic clutch, a low seat height and push-button electric start, allowing young riders to keep their focus on the trail.",
+  },
 ];
 ---
 <Layout title={title} description={description}>
 
   <div class="page-hero">
     <div class="wrap">
-      <div class="section-label">Rent &amp; Ride</div>
       <h1 class="display">Motorcycles to Rent.</h1>
-      <p class="hero-sub">KTM, Husqvarna, and Kawasaki — 150cc to 300cc 2-strokes, 140cc to 450cc 4-strokes.</p>
+      <p class="hero-sub">Check out our range of KTM, Husqvarna, and Kawasaki rental dirt bikes below. We have 150cc to 300cc 2-strokes, and 140cc to 450cc 4-stroke motorcycles to choose from.</p>
     </div>
   </div>
 
-  <div class="price-strip">
-    <div class="price-strip-inner">
-      <div class="price-tag display">$375<span>PER RIDER / PER DAY</span></div>
-      <ul class="price-includes">
-        <li>Bike of your choice</li>
-        <li>All riding gear</li>
-        <li>Guided trail time</li>
-        <li>Gas &amp; lunch</li>
-      </ul>
-      <a href="tel:5092810156" class="btn btn-big">Call to Book</a>
+  <div class="pricing-block">
+    <div class="wrap">
+      <div class="section-label">All-Inclusive Rent &amp; Ride Packages</div>
+      <div class="price-row">
+        <div class="price-tag display">$375<span>Per Rider / Per Day</span></div>
+        <div class="price-details">
+          <p>Price includes all riding gear (bring your own hydration pack), gas, lunch, and an experienced trail guide to get you to the best trails for the conditions, your riding level, and desired terrain. The bikes are prepped and transported to and from the trails. You just show up and ride. We'll take care of the rest!</p>
+          <p class="price-extra">+ $250 per rider per day for any additional rider that brings their own bike, gas, and gear that joins an existing rental group.</p>
+        </div>
+        <a href="tel:5092810156" class="btn btn-big">Call to Book</a>
+      </div>
+      <p class="guide-note">Please note: we do not rent bikes without the accompaniment of our in-person trail guide.</p>
+    </div>
+  </div>
+
+  <div class="training-block">
+    <div class="wrap">
+      <div class="section-label">Training</div>
+      <p>Interested in training to improve your skills and help build more confidence on the trails? Simply add on <strong>$50 per rider per day</strong> for expert feedback and practice drills while on your ride.</p>
     </div>
   </div>
 
@@ -43,11 +92,21 @@ const bikes = [
             <div class="bike-img">
               <img src={bike.img} alt={bike.name} />
             </div>
-            <div class="bike-name">{bike.name}</div>
+            <div class="bike-info">
+              <div class="bike-name">{bike.name}</div>
+              {bike.description && <p class="bike-desc">{bike.description}</p>}
+              {bike.upgrades && (
+                <div class="bike-upgrades">
+                  <div class="upgrades-label">Upgrades</div>
+                  <ul>
+                    {bike.upgrades.map(u => <li>{u}</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
-      <p class="guide-note">We do not rent bikes without the accompaniment of our in-person trail guide.</p>
     </div>
   </section>
 
@@ -61,41 +120,44 @@ const bikes = [
 
 <style>
   .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
-  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); margin-bottom: 20px; }
-  .hero-sub { font-size: 18px; color: var(--leather-soft); max-width: 54ch; }
+  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); margin-bottom: 24px; }
+  .hero-sub { font-size: 19px; color: var(--leather-soft); max-width: 60ch; }
 
-  .price-strip { background: var(--rust); color: #fff; padding: 40px 24px; }
-  .price-strip-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; }
-  .price-tag { font-size: 84px; line-height: 0.82; color: #fff; padding-right: 40px; border-right: 3px solid rgba(255,255,255,0.3); }
-  .price-tag span { display: block; font-size: 13px; letter-spacing: 0.16em; margin-top: 12px; font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; }
-  .price-includes { display: flex; flex-wrap: wrap; gap: 10px 32px; font-size: 15px; font-weight: 600; }
-  .price-includes li { list-style: none; position: relative; padding-left: 24px; }
-  .price-includes li::before { content: '→'; position: absolute; left: 0; font-weight: 900; }
-  .price-strip .btn { background: var(--ink); border-color: var(--ink); white-space: nowrap; }
-  .price-strip .btn:hover { background: var(--cream); border-color: var(--cream); color: var(--ink); }
-  @media (max-width: 900px) {
-    .price-strip-inner { grid-template-columns: 1fr; gap: 24px; }
-    .price-tag { border-right: none; border-bottom: 3px solid rgba(255,255,255,0.3); padding: 0 0 24px; font-size: 68px; }
-  }
+  .pricing-block { background: var(--rust); color: #fff; padding: 64px 0; }
+  .pricing-block .section-label { color: #fff; }
+  .pricing-block .section-label::before { background: rgba(255,255,255,0.5); }
+  .price-row { display: grid; gap: 40px; align-items: start; }
+  @media (min-width: 900px) { .price-row { grid-template-columns: auto 1fr auto; align-items: center; } }
+  .price-tag { font-size: 96px; line-height: 0.82; color: #fff; padding-right: 48px; border-right: 3px solid rgba(255,255,255,0.3); }
+  .price-tag span { display: block; font-size: 13px; letter-spacing: 0.16em; margin-top: 14px; font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; }
+  @media (max-width: 899px) { .price-tag { border-right: none; padding-right: 0; font-size: 72px; } }
+  .price-details p { font-size: 19px; color: rgba(255,255,255,0.9); max-width: 58ch; margin-bottom: 12px; }
+  .price-extra { font-size: 17px !important; opacity: 0.8; font-style: italic; }
+  .pricing-block .btn { background: var(--ink); border-color: var(--ink); white-space: nowrap; }
+  .pricing-block .btn:hover { background: var(--cream); border-color: var(--cream); color: var(--ink); }
+  .guide-note { font-size: 17px; color: rgba(255,255,255,0.7); margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.2); font-style: italic; }
+
+  .training-block { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 64px 0; }
+  .training-block p { font-size: 19px; color: var(--leather-soft); max-width: 60ch; }
 
   .bikes-section { padding: 100px 0; background: var(--cream); }
-  .bike-grid { display: grid; gap: 32px; margin-bottom: 48px; }
-  @media (min-width: 600px) { .bike-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 900px) { .bike-grid { grid-template-columns: repeat(3, 1fr); } }
+  .bike-grid { display: grid; gap: 48px; margin-bottom: 48px; }
 
   .bike-card {
     border: 1px solid var(--line);
     background: #fff;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .bike-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(58,36,25,0.12); }
-  .bike-img { height: 240px; overflow: hidden; }
-  .bike-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-  .bike-card:hover .bike-img img { transform: scale(1.05); }
-  .bike-name { padding: 16px 20px; font-weight: 700; font-size: 15px; color: var(--leather); border-top: 3px solid var(--rust); }
-
-  .guide-note { font-size: 15px; color: var(--leather-soft); font-style: italic; }
+  .bike-img { overflow: hidden; }
+  .bike-img img { width: 100%; height: auto; display: block; }
+  .bike-info { padding: 24px; border-top: 3px solid var(--rust); }
+  .bike-name { font-weight: 700; font-size: 19px; color: var(--leather); margin-bottom: 0; }
+  .bike-desc { font-size: 19px; color: var(--leather-soft); line-height: 1.6; margin-top: 16px; }
+  .bike-upgrades { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line-soft); }
+  .upgrades-label { font-size: 13px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; }
+  .bike-upgrades ul { padding-left: 0; }
+  .bike-upgrades li { list-style: none; padding: 8px 0 8px 24px; position: relative; font-size: 19px; color: var(--leather-soft); border-bottom: 1px solid var(--line-soft); }
+  .bike-upgrades li::before { content: '–'; position: absolute; left: 0; color: var(--rust); font-weight: 700; }
 
   .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
   .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
