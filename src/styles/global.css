@@ -67,7 +67,7 @@ a { color: inherit; }
 
 /* ===== Section elements ===== */
 .section-label {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--rust);
@@ -95,7 +95,7 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.24em;
   text-transform: uppercase;

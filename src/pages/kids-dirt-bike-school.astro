@@ -9,7 +9,7 @@ const description = 'Give your kids an unforgettable experience';
     <div class="wrap hero-inner">
       <div class="hero-text">
         <div class="section-label">For Ages 8 &amp; Up</div>
-        <h1 class="display">Give your kids an unforgettable experience!</h1>
+        <h1 class="display">Give your kids<br>an unforgettable<br>experience!</h1>
         <p class="hero-sub">We've got an awesome day planned for you and your kids.</p>
         <div class="kid-quotes">
           <div class="kid-quote">"That was insane!" <span>~ Toby</span></div>
@@ -62,8 +62,8 @@ const description = 'Give your kids an unforgettable experience';
   .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
   .hero-inner { display: grid; gap: 60px; align-items: center; }
   @media (min-width: 800px) { .hero-inner { grid-template-columns: 1fr 1fr; } }
-  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); max-width: 18ch; margin-bottom: 20px; }
-  .hero-sub { font-size: 18px; color: var(--leather-soft); max-width: 54ch; margin-bottom: 32px; }
+  .page-hero h1 { font-size: clamp(40px, 5.5vw, 80px); line-height: 1.05; color: var(--leather); max-width: 18ch; margin-bottom: 20px; }
+  .hero-sub { font-size: 31px; font-weight: 700; color: var(--leather); max-width: 54ch; margin-bottom: 32px; }
   .kid-quotes { display: flex; flex-direction: column; gap: 16px; }
   .kid-quote {
     font-family: 'Big Shoulders Display', sans-serif;
