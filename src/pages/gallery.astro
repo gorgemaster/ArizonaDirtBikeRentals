@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = 'Gallery - Arizona Dirt Bike Rentals';
+const description = 'Photos from guided dirt bike tours and rentals in Wickenburg and the Phoenix, Arizona area — KTM and Husqvarna on epic desert singletrack.';
+
+const images = [
+  '2022/07/IMG_20210104_110215.jpg',
+  '2022/07/IMG_20191109_103647.jpg',
+  '2022/07/IMG_20200125_103543-1200px.jpg',
+  '2022/07/IMG_20201001_100352.jpg',
+  '2022/07/IMG_20220608_093817.jpg',
+  '2022/07/IMG_20191124_115053.jpg',
+  '2022/07/IMG_20201228_110251.jpg',
+  '2022/07/IMG_20220619_100745.jpg',
+  '2022/07/IMG_20200309_105455.jpg',
+  '2022/07/20190325_115927_HDR.jpg',
+  '2022/07/IMG_20210117_112816.jpg',
+  '2022/07/IMG_20201214_121358.jpg',
+  '2022/07/IMG_20200309_095955.jpg',
+  '2022/07/IMG_20200301_094148.jpg',
+  '2022/07/IMG_20200613_114752.jpg',
+  '2022/07/IMG_20220608_102323.jpg',
+  '2022/07/IMG_20200302_104805.jpg',
+  '2022/07/IMG_20200226_120613.jpg',
+  '2022/07/IMG_20191229_114026.jpg',
+  '2018/02/20180211_120120.jpg',
+  '2018/02/20180112_112416.jpg',
+  '2018/02/20180211_120107.jpg',
+  '2018/02/20171226_121455.jpg',
+  '2018/02/20171201_121737.jpg',
+  '2018/02/20180128_123738.jpg',
+  '2018/02/20180114_120127.jpg',
+  '2018/02/20180223_104546.jpg',
+  '2018/02/20180112_120740.jpg',
+  '2018/02/20180116_114312.jpg',
+  '2018/02/20170224_195045717.jpeg',
+  '2018/02/20170124_200908134.jpeg',
+  '2018/02/20180211_1041510.jpg',
+  '2018/02/2814.jpeg',
+];
+---
+<Layout title={title} description={description}>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="section-label">On the Trails</div>
+      <h1 class="display">Photo Gallery.</h1>
+    </div>
+  </div>
+
+  <section class="gallery-section">
+    <div class="wrap">
+      <div class="gallery-grid">
+        {images.map((img, i) => (
+          <div class="gallery-item">
+            <img src={`/images/${img}`} alt={`Arizona Dirt Bike Rentals trail riding photo ${i + 1}`} loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="call-cta">
+    <div class="section-label">Book Your Ride</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); margin-bottom: 0; }
+
+  .gallery-section { padding: 80px 0; background: var(--cream); }
+  .gallery-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 600px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 900px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .gallery-item {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: var(--cream-deep);
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.06); }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const title = 'Ride 2019 KTM and Husky TPI - Arizona Dirt Bike Rentals';
+const description = "Here at Arizona Dirt Bike, we have the latest sleds from Austria. Don't dream anymore about riding them, make it a reality. Riding these bikes in the best winter terrain, dreams do come true.";
+const date = 'January 6, 2019';
+---
+<Layout title={title} description={description}>
+
+  <div class="post-hero">
+    <div class="wrap">
+      <div class="post-meta">
+        <a href="/blog/" class="back-link">← Blog</a>
+        <span class="post-date">{date}</span>
+      </div>
+      <h1 class="display">Ride 2019 KTM<br>and Husky TPI.</h1>
+    </div>
+  </div>
+
+  <article class="post-body">
+    <div class="wrap post-content">
+      <p>Here at Arizona Dirt Bike, we have the latest sleds from Austria. Don't dream anymore about riding them — make it a reality, that you've wanted to give yourself.</p>
+
+      <p>Riding these bikes in the best winter terrain, dreams do come true. Arizona's desert southwest offers world-class singletrack and the 2019 TPI bikes are the perfect machines to experience it on. The fuel-injected two-strokes deliver crisp, predictable power across the full rev range — trail-friendly at low RPM, genuinely exciting at the top.</p>
+
+      <p>We have both KTM and Husqvarna TPI models available to ride. All the gear is included. Give Doug a call and line up your day.</p>
+
+      <p><strong>What are you waiting for — permission?</strong></p>
+    </div>
+  </article>
+
+  <section class="call-cta">
+    <div class="section-label">Book a TPI Day</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .post-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .post-meta { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+  .back-link { font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  .post-date { font-size: 13px; color: var(--leather-soft); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .post-hero h1 { font-size: clamp(40px, 6.5vw, 84px); color: var(--leather); }
+
+  .post-body { padding: 80px 0 100px; background: var(--cream); }
+  .post-content { max-width: 740px; }
+  .post-content p { font-size: 18px; color: var(--leather-soft); line-height: 1.75; margin-bottom: 24px; }
+  .post-content h2 { font-size: 24px; font-weight: 800; color: var(--leather); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 3px solid var(--rust); }
+  .post-content strong { color: var(--leather); font-weight: 700; }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

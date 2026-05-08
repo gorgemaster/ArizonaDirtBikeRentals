@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = 'Blog - Arizona Dirt Bike Rentals';
+const description = 'Dirt bike tips, trail reports, gear reviews, and riding stories from Arizona Dirt Bike Rentals in Wickenburg, AZ.';
+
+const posts = [
+  {
+    slug: 'tire-selection-long-term-update',
+    title: 'Tire Selection Long Term Update',
+    excerpt: "At Arizona Dirt Bike and Oregon Motorcycle, we get to test the latest greatest tires under every condition mother nature throws at us. Over the last few years, we've had a plethora of new and excellent traction rear tires available.",
+  },
+  {
+    slug: 'ride-2019-ktm-and-husky-tpi',
+    title: 'Ride 2019 KTM and Husky TPI',
+    excerpt: "Here at Arizona Dirt Bike, we have the latest sleds from Austria. Don't dream anymore about riding them, make it a reality. Riding these bikes in the best winter terrain, dreams do come true.",
+  },
+  {
+    slug: 'ktm-2019-tpi-tips',
+    title: 'KTM 2019 TPI Tips',
+    excerpt: "Really like the solid TPI throttle response, crisp and clean every time, except when you start the machine on cold mornings. I'm far from an expert on this new machine, but I have found one reliable cold-start solution.",
+  },
+  {
+    slug: 'safely-training-above-your-skill-level',
+    title: 'Safely Training Above Your Skill Level',
+    excerpt: 'How to improve quickly, without injury — a dilemma we all face if we are to up our game. Seek out a spot you can train, with a crutch. When I rode trials, I used to fill in big gaps with firewood.',
+  },
+  {
+    slug: 'arizona-2018-season-wrap-up',
+    title: 'Arizona 2018 Season Wrap-Up',
+    excerpt: "Thanks to all the riders who braved the airports, highways, warm temps, and sunshine to come to Wickenburg and shred it up with me. We're back in the Northwest, where no-dust riding is in full force!!",
+  },
+  {
+    slug: 'welcome-to-arizona-dirt-bike-rentals',
+    title: 'Welcome to Arizona Dirt Bike Rentals',
+    excerpt: "First I'm stoked to have the best equipment here for you to rent and experience just how special the terrain is in Arizona. We pride ourselves in offering the raddest, modded, KTM and Husqvarna sleds anywhere.",
+  },
+];
+---
+<Layout title={title} description={description}>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="section-label">Trail Notes</div>
+      <h1 class="display">The Blog.</h1>
+    </div>
+  </div>
+
+  <section class="blog-section">
+    <div class="wrap">
+      <div class="post-list">
+        {posts.map(post => (
+          <article class="post-card">
+            <a href={`/uncategorized/${post.slug}/`} class="post-link">
+              <h2 class="post-title">{post.title}</h2>
+              <p class="post-excerpt">{post.excerpt}</p>
+              <span class="read-more">Read More →</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="call-cta">
+    <div class="section-label">Ready to Ride?</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); margin-bottom: 0; }
+
+  .blog-section { padding: 80px 0; background: var(--cream); }
+  .post-list { display: flex; flex-direction: column; gap: 2px; }
+
+  .post-card { background: #fff; border: 1px solid var(--line); }
+  .post-link {
+    display: block;
+    padding: 36px 40px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease;
+    border-left: 4px solid transparent;
+  }
+  .post-link:hover { background: var(--cream-deep); border-left-color: var(--rust); }
+
+  .post-title {
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 800;
+    color: var(--leather);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .post-excerpt {
+    font-size: 16px;
+    color: var(--leather-soft);
+    max-width: 68ch;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .read-more {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

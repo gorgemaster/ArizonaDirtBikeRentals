@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const title = 'Safely Training Above Your Skill Level - Arizona Dirt Bike Rentals';
+const description = "How to improve quickly, without injury — a dilemma we all face if we are to up our game. Seek out a spot you can train with a crutch, reduce the mental hesitation, and build up progressively.";
+const date = 'May 15, 2018';
+---
+<Layout title={title} description={description}>
+
+  <div class="post-hero">
+    <div class="wrap">
+      <div class="post-meta">
+        <a href="/blog/" class="back-link">← Blog</a>
+        <span class="post-date">{date}</span>
+      </div>
+      <h1 class="display">Safely Training<br>Above Your<br>Skill Level.</h1>
+    </div>
+  </div>
+
+  <article class="post-body">
+    <div class="wrap post-content">
+      <p>How to improve quickly, without injury — a dilemma we all face if we are to up our game. The answer is finding spots where you can train with a crutch: something that removes the mental hesitation and fear of failing, so you can build the movement pattern before removing the safety net.</p>
+
+      <h2>Trials Technique</h2>
+      <p>When I rode trials, I used to fill in big gaps with firewood. This took away the mental hesitation and fear of failing. Once the movement felt automatic, I removed a piece of firewood at a time until the gap was back to its natural state. By then, the skill was locked in.</p>
+
+      <h2>Hillclimb and Step-Ups</h2>
+      <p>Find soft soil areas with natural safety features nearby. Practice short run-ups before tackling larger obstacles. Using pallets placed on either side of logs serves as a confidence-building tool before attempting full obstacles. Start with what you can land safely, then progressively raise the bar.</p>
+
+      <h2>Gear Up Properly</h2>
+      <p>Proper protective gear and armor are essential. Injuries are the primary obstacle to skill advancement — one bad crash can set you back months. The philosophy is simple: combine mental preparation with physical safety measures, and you can push your limits responsibly without the setbacks that derail progress.</p>
+    </div>
+  </article>
+
+  <section class="call-cta">
+    <div class="section-label">Guided Instruction Available</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .post-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .post-meta { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+  .back-link { font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  .post-date { font-size: 13px; color: var(--leather-soft); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .post-hero h1 { font-size: clamp(40px, 6.5vw, 84px); color: var(--leather); }
+
+  .post-body { padding: 80px 0 100px; background: var(--cream); }
+  .post-content { max-width: 740px; }
+  .post-content p { font-size: 18px; color: var(--leather-soft); line-height: 1.75; margin-bottom: 24px; }
+  .post-content h2 { font-size: 24px; font-weight: 800; color: var(--leather); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 3px solid var(--rust); }
+  .post-content strong { color: var(--leather); font-weight: 700; }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const title = 'Welcome to Arizona Dirt Bike Rentals - Arizona Dirt Bike Rentals';
+const description = "First I'm stoked to have the best equipment here for you to rent and experience just how special the terrain is in Arizona. We pride ourselves in offering the raddest, modded, KTM and Husqvarna sleds anywhere.";
+const date = 'January 18, 2018';
+---
+<Layout title={title} description={description}>
+
+  <div class="post-hero">
+    <div class="wrap">
+      <div class="post-meta">
+        <a href="/blog/" class="back-link">← Blog</a>
+        <span class="post-date">{date}</span>
+      </div>
+      <h1 class="display">Welcome to<br>Arizona Dirt<br>Bike Rentals.</h1>
+    </div>
+  </div>
+
+  <article class="post-body">
+    <div class="wrap post-content">
+      <p>First — I'm stoked to have the best equipment here for you to rent and experience just how special the terrain is in Arizona. We pride ourselves in offering the raddest, modded, KTM and Husqvarna sleds anywhere.</p>
+
+      <p>These bikes make any rider a hero. No matter what the skill level, you will be hooked. The setup, the trails, the Arizona desert — it's genuinely unlike anything else.</p>
+
+      <p>Arizona's favorable weather makes it an ideal location for dirt bike adventures year-round. While the rest of the country deals with snow or mud season, we're out in the sunshine on world-class singletrack. Why would you delay starting?</p>
+
+      <p>Give Doug a call. Let's get you on a bike.</p>
+    </div>
+  </article>
+
+  <section class="call-cta">
+    <div class="section-label">Let's Ride</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .post-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .post-meta { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+  .back-link { font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  .post-date { font-size: 13px; color: var(--leather-soft); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .post-hero h1 { font-size: clamp(40px, 6.5vw, 84px); color: var(--leather); }
+
+  .post-body { padding: 80px 0 100px; background: var(--cream); }
+  .post-content { max-width: 740px; }
+  .post-content p { font-size: 18px; color: var(--leather-soft); line-height: 1.75; margin-bottom: 24px; }
+  .post-content h2 { font-size: 24px; font-weight: 800; color: var(--leather); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 3px solid var(--rust); }
+  .post-content strong { color: var(--leather); font-weight: 700; }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

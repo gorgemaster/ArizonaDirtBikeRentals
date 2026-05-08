@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = 'Arizona Dirt Bike Rentals - KTM & Husqvarna Motorcycle Tours & Training';
+const description = 'Off-road motorcycle tours, training, and moto rentals. Ride the latest Husqvarna and KTM dirt bikes and the best Wickenburg, Phoenix, Arizona moto trails.';
+
+const reviews = [
+  { quote: "My buddy and I flew out from New England to visit the area and rented bikes from Doug — was a very good experience. Clearly Doug is good at making the best of your skill level and was able to take me into some nice harder enduro areas. I will be back. Was nice to see what more Arizona has to offer.", author: "Jacob Gleason" },
+  { quote: "We had an amazing dirt biking experience with Arizona Dirt Bike Rentals, thanks to Doug! The dirt bikes were top-notch, providing a thrilling ride. Doug's guidance was excellent — knowledgeable, friendly, and ensuring everyone had a blast. Highly recommend for an unforgettable adventure!", author: "Michael Colombo" },
+  { quote: "Doug was a fantastic host, he set my group up with all the gear and motorcycles matching our size and ability. Our group rode Husky 450s with Rekluse clutches. Doug communicated effectively and matched trails with our abilities while keeping the riding a challenge.", author: "Adam Herried" },
+  { quote: "Awesome experience! Doug set us up with all the gear we needed, had great knowledge of the trails and surrounding area and the bikes ran great! Doug was very accommodating to our skill levels and was fun to share the experience with. Would definitely recommend!", author: "Caitlin Sharp" },
+  { quote: "I had an amazing time. Doug is a superb rider and down to earth gentleman. This only made me want to come back and do it again. I might even buy another bike after this experience. If you're thinking about it and not sure — just do it anyway.", author: "Jesse Ramos" },
+  { quote: "This was one of the top 3 riding days in my life. Doug is an awesome host whether it's to put you at ease, give you riding tips or just being the good guy that he is. Well prepared KTM and Husky with top of the line accessories, Tubliss and Rekluse.", author: "Charles Lapierre" },
+  { quote: "I can't say enough good things about my experience with Doug. He provides all the equipment you need and his bike set ups are awesome! I don't have a lot of riding experience, but Doug understood that and was very nice and patient with me.", author: "Jordan Moyer" },
+  { quote: "Doug did a great job assessing my skills and selecting appropriate trails. We had a good time rippin' it up. He took me through a bunch of fun single track and mixed in some more open trails so I could catch my breath. I will do this again the next time I visit the Phoenix area.", author: "Doug Cooper" },
+  { quote: "Doug was an amazing guide for our moto adventure!! The bikes he provided were top notch, ran perfectly, and even left me wanting an upgrade to my current moto! He picked us up, took us to some amazing trails, and gave us a few riding pointers along the way!", author: "Nick Hardin" },
+];
+---
+<Layout title={title} description={description} canonical="https://arizonadirtbikerentals.com/">
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="section-label">Advanced &amp; Expert Riders</div>
+      <h1 class="display">You Should Be<br>Out Riding.</h1>
+      <p class="hero-sub">Every possible terrain you can imagine is here in Wickenburg. We've been dishing out the best singletrack since 2010.</p>
+    </div>
+  </div>
+
+  <section class="intro-section">
+    <div class="wrap intro-grid">
+      <div class="intro-text">
+        <p>As an advanced rider you know what you want. We'll provide the best tools from KTM and Husqvarna to help you conquer any track.</p>
+        <p>Check out the bikes and give Doug a call to line up your day.</p>
+        <a href="/motorcycles/" class="btn" style="margin-top: 24px; display: inline-block;">See the Bikes</a>
+      </div>
+      <div class="intro-stats">
+        <div class="stat">
+          <span class="display stat-num">2010</span>
+          <span class="stat-label">Established</span>
+        </div>
+        <div class="stat">
+          <span class="display stat-num">500+</span>
+          <span class="stat-label">Guided rides</span>
+        </div>
+        <div class="stat">
+          <span class="display stat-num">5★</span>
+          <span class="stat-label">Rated</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section">
+    <div class="wrap">
+      <div class="section-label">Advanced Rider Reviews</div>
+      <div class="reviews-grid">
+        {reviews.map(r => (
+          <blockquote class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">{r.quote}</p>
+            {r.author && <cite>— {r.author}</cite>}
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="call-cta">
+    <div class="section-label">Book Your Ride</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--ink); color: var(--cream); padding: 100px 0; border-bottom: 3px solid var(--rust); }
+  .page-hero h1 { font-size: clamp(48px, 7.5vw, 108px); color: var(--cream); margin-bottom: 20px; }
+  .hero-sub { font-size: 18px; color: rgba(253,252,249,0.75); max-width: 52ch; }
+  .page-hero .section-label { color: var(--rust); }
+  .page-hero .section-label::before { background: var(--rust); }
+
+  .intro-section { padding: 80px 0; background: var(--cream-deep); border-bottom: 1px solid var(--line); }
+  .intro-grid { display: grid; gap: 60px; align-items: center; }
+  @media (min-width: 800px) { .intro-grid { grid-template-columns: 1fr 1fr; } }
+  .intro-text p { font-size: 17px; color: var(--leather-soft); margin-bottom: 16px; max-width: 52ch; }
+
+  .intro-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+  .stat { padding: 28px 16px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--rust); }
+  .stat-num { font-size: clamp(32px, 4vw, 52px); color: var(--leather); display: block; }
+  .stat-label { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--leather-soft); margin-top: 6px; display: block; }
+
+  .reviews-section { padding: 100px 0; background: var(--cream); }
+  .reviews-grid { display: grid; gap: 24px; margin-top: 48px; }
+  @media (min-width: 600px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .review-card { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--rust); padding: 28px 24px; }
+  .stars { color: var(--rust); font-size: 18px; letter-spacing: 2px; margin-bottom: 14px; }
+  .quote { font-size: 15px; color: var(--leather-soft); line-height: 1.65; margin-bottom: 14px; }
+  cite { font-style: normal; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

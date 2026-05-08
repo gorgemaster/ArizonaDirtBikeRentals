@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const title = 'Tire Selection Long Term Update - Arizona Dirt Bike Rentals';
+const description = "At Arizona Dirt Bike and Oregon Motorcycle, we get to test the latest greatest tires under every condition mother nature throws at us. Our long-term findings on desert, wet, and all-condition rear tires.";
+const date = 'January 27, 2019';
+---
+<Layout title={title} description={description}>
+
+  <div class="post-hero">
+    <div class="wrap">
+      <div class="post-meta">
+        <a href="/blog/" class="back-link">← Blog</a>
+        <span class="post-date">{date}</span>
+      </div>
+      <h1 class="display">Tire Selection<br>Long Term Update.</h1>
+    </div>
+  </div>
+
+  <article class="post-body">
+    <div class="wrap post-content">
+      <p>At Arizona Dirt Bike and Oregon Motorcycle, we get to test the latest greatest tires under every condition mother nature throws at us. Over the last few years we've had a plethora of new and excellent traction rear tires available — here are our long-term findings.</p>
+
+      <h2>Desert Terrain</h2>
+      <p>My favorite: <strong>Kenda Ibex</strong>. Not the most durable, but its ability to gain traction is unmatched, period. The Golden tire ranks second. The Shinko Cheater 505 excels in durability, but performs poorly in wet conditions when run at low pressure.</p>
+
+      <h2>Wet Conditions</h2>
+      <p>The Kenda Ibex proves superior in muddy terrain. You can feel this tire grab traction in the slickest, sickest mud. While the Golden performs well when new, it deteriorates quickly — yielding approximately three good rides compared to ten for the Ibex.</p>
+
+      <h2>Setup</h2>
+      <p>We recommend Tubliss setups for their repairability and overall performance in varied conditions. The ability to run lower pressures without pinch flats, combined with easy trailside repairs, makes Tubliss the right call for Arizona desert riding.</p>
+    </div>
+  </article>
+
+  <section class="call-cta">
+    <div class="section-label">Come Ride With Us</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .post-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .post-meta { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+  .back-link { font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+  .post-date { font-size: 13px; color: var(--leather-soft); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .post-hero h1 { font-size: clamp(40px, 6.5vw, 84px); color: var(--leather); }
+
+  .post-body { padding: 80px 0 100px; background: var(--cream); }
+  .post-content { max-width: 740px; }
+  .post-content p { font-size: 18px; color: var(--leather-soft); line-height: 1.75; margin-bottom: 24px; }
+  .post-content h2 { font-size: 24px; font-weight: 800; color: var(--leather); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 3px solid var(--rust); }
+  .post-content strong { color: var(--leather); font-weight: 700; }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

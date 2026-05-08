@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = 'Reviews - Arizona Dirt Bike Rentals';
+const description = 'Customer reviews of Arizona Dirt Bike Rentals from past customers riding dirt bikes in the Wickenburg, Phoenix, Arizona area.';
+
+const reviews = [
+  "Rode with Doug just this past Saturday – What an awesome time! He was completely prepared with gear and bikes. Perfectly paced experience that started small and slowly built up confidence to some pretty exciting trails. Location was spectacular!",
+  "So glad we found this guy and had the time of our lives on the trails. Worth every penny will definitely do this again if we are in the area. Thank you Doug!",
+  "Had a great day of riding arizona single track. Top of the line equipment and gear. I will definitely be back to do some more riding in the future.",
+  "Had an awesome time with Doug! Flew down from Idaho for the Supercross and booked a day with Doug. Bikes ran great and he showed us some beautiful country. Well worth it. Will definitely do it again next year.",
+  "Doug was an amazing guide for our moto adventure!! The bikes he provided were top notch, ran perfectly, and even left me wanting an upgrade to my current moto! He picked us up, took us to some amazing trails, and gave us a few riding pointers along the way! Can't wait to ride with him again. — Nick Hardin",
+  "Doug took us out for two days of riding in the desert west of Phoenix. We had a blast. Doug picked us up and we had breakfast in Wickenburg. Doug brought along a trailer with his dirt bikes and outfitted us for dirt riding. We rode until the early afternoon on a mixture of singletrack, dry river beds, and fun dirt bike playgrounds. He knows the area super well and gave us instruction along the way.",
+  "Doug is an awesome guy and has a way of making you feel like his best friend. We were very glad that we chose a guided tour rather than just renting bikes since the trails were more challenging than we expected (it was our first time riding out west). Highly recommend! — Trevor Wynkoop & Jonathan Mares",
+  "Doug took our reservation same day, got us from sitting on the couch to geared up on a bike having an awesome time in under an hour. Worth every penny. I will be a repeat customer next time I'm in Phoenix. — Tyler Sabin",
+  "Best of trip by far!! So Glad we found this guy and had the time of our lives on the trails. Worth every penny will definitely do this again if we are in the area. Thank you Doug!!! — White Trash Tesla",
+  "Couldn't have been more pleased with Doug. He gave my son and I a great time in the Arizona desert. My son had never been on a full size motorcycle and with a little coaching from Doug he was off and in the words of Doug \"killing it\". Thank you Doug and for anyone looking for this experience look no further. — Chase Longmiller",
+  "Found Doug through a google search and called his number — he answered all my questions quickly and got us booked. The bikes were barely used and set up perfectly. He asked what kind of riding we wanted to do and let us warm up around the start before heading out to more challenging terrain.",
+  "My wife, friends, and I decided to do some single track in Arizona. We come from Oahu riding where the terrain is very different, Doug made us feel right at home. He gave us ample time to warm up, and he let us choose the pace and difficulty. Doug took us on the most amazing single track I've ever ridden, nice flow, and challenging at the same time. He was very professional and was constantly checking on the group.",
+  "Had a fantastic time! Doug really knows the area well and was able to provide everyone in the group with enjoyment for their riding level. The bikes were really nice and all the gear was provided.",
+  "We came all the way from Australia to ride and we were not disappointed!",
+  "Father/son first timers. Doug was fantastic in getting us up to speed and comfortable and then taking us to some fun and challenging spots to ride. He has a perfect balance of fun, learning, and challenging. Highly recommend him for all skill levels! — Dan",
+  "Awesome times riding with Doug! He's easy and fun to hang out with, and really knows the trails.",
+  "Doug was awesome! The boys loved it and they cannot wait to go again! He had everything they needed and they had an awesome time! Highly recommend!",
+  "Best time ever riding. Doug's a great coach/rider and can help improve your skills massively. Definitely recommend this to anyone beginner to expert, even if you prefer to ride motocross or flat track. Would highly recommend if you want to improve your skills on trails or to get your kid out of the house and start this amazing sport.",
+  "We rode for the day after he took us to breakfast. The bikes were amazing as well as the terrain. It was definitely the best part of our Arizona trip. It was also the best dirt bike riding session I've had in my life. I would 10/10 recommend it and we will most likely be back sometime. — Jeff Thoreson",
+  "Top notch! From initial call, through booking, through pre-day ride logistics, Doug was on it. As a fellow small business owner, I know what it takes to accomplish all these tasks and was impressed. The bike I requested was prepped and ready, yet Doug was savvy enough to have other bikes at the ready that I may be interested in, all based on my brief riding ability description to him.",
+  "A buddy and I decided to get out of the winter weather and head somewhere warm. Not only does Doug have incredible riding skills he is also able to break down drills, techniques and even specific routes into digestible pieces which kept me from getting overwhelmed with new knowledge. Coming from a street and track background, I knew the specifics of riding — but trail riding was new to me.",
+  "Had a fantastic time! Doug really knows the area well and was able to provide everyone in the group with enjoyment for their riding level. The bikes were really nice and all the gear was provided: Helmet, boots, pants, armor, etc. We had to be back for a meeting on time and Doug made it happen! — Jordan Aldrich",
+  "Just got back from a great day riding with Doug! Met my brother in Phoenix for a long weekend and this was definitely the highlight. We both enjoy riding, but this desert Enduro riding is a different animal. It's a blast! Doug is an experienced guide — one that knows how to have fun and challenge you, but knows how to keep you safe.",
+  "Best experience I have ever had with a dirt bike. Loved the trails and the views. Got to see a mine used in World War 2. First time riding in this terrain and he gave me great instruction. — Russel Roodenburg",
+];
+---
+<Layout title={title} description={description}>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="section-label">What Riders Say</div>
+      <h1 class="display">Hundreds of<br>5-Star Reviews.</h1>
+    </div>
+  </div>
+
+  <section class="reviews-section">
+    <div class="wrap">
+      <div class="reviews-grid">
+        {reviews.map(r => (
+          <blockquote class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>{r}</p>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="call-cta">
+    <div class="section-label">Join Them</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); margin-bottom: 0; }
+
+  .reviews-section { padding: 100px 0; background: var(--cream); }
+  .reviews-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 600px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .review-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--rust);
+    padding: 28px 24px;
+  }
+  .stars { color: var(--rust); font-size: 18px; letter-spacing: 2px; margin-bottom: 14px; }
+  .review-card p { font-size: 15px; color: var(--leather-soft); line-height: 1.65; }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

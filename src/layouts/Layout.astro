@@ -6,11 +6,13 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
 }
 
 const {
   title = 'Arizona Dirt Bike Rentals',
-  description = 'Unforgettable guided dirt bike rides in Wickenburg, Arizona.'
+  description = 'Unforgettable guided dirt bike rides in Wickenburg, Arizona.',
+  canonical
 } = Astro.props;
 ---
 <html lang="en">
@@ -21,6 +23,7 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+    {canonical && <link rel="canonical" href={canonical} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
