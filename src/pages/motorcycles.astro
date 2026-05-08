@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = 'Motorcycles - Arizona Dirt Bike Rentals';
+const description = 'We rent the latest Husqvarna and KTM dirt bikes in the Wickenburg, Phoenix, Arizona area. We have 2-strokes and 4-stroke motorcycles to choose from.';
+
+const bikes = [
+  { name: '2023 KTM 300 XC', img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-KTM-300-XC-2023.jpg' },
+  { name: '2023 Husqvarna 300 TE', img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-Husqvarna-300-TE-2023.jpg' },
+  { name: 'Husqvarna 450 FX', img: '/images/2023/07/Arizona-Dirt-Bike-Rentals-Husqvarna-450-FX-2022.jpg' },
+  { name: 'KTM 150 XC-W', img: '/images/2021/12/Arizona-Dirt-Bike-Rentals-KTM-150-XC-W-2022.jpg' },
+  { name: 'Husqvarna TE 300i', img: '/images/2021/12/Arizona-Dirt-Bike-Rentals-Husqvarna-TE-300i-2022.jpg' },
+  { name: 'Kawasaki KLX 140 RL', img: '/images/2022/05/Arizona-Dirt-Bike-Rentals-Kawasaki-KLX-140-RL-2022.jpg' },
+];
+---
+<Layout title={title} description={description}>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="section-label">Rent &amp; Ride</div>
+      <h1 class="display">Motorcycles to Rent.</h1>
+      <p class="hero-sub">KTM, Husqvarna, and Kawasaki — 150cc to 300cc 2-strokes, 140cc to 450cc 4-strokes.</p>
+    </div>
+  </div>
+
+  <div class="price-strip">
+    <div class="price-strip-inner">
+      <div class="price-tag display">$375<span>PER RIDER / PER DAY</span></div>
+      <ul class="price-includes">
+        <li>Bike of your choice</li>
+        <li>All riding gear</li>
+        <li>Guided trail time</li>
+        <li>Gas &amp; lunch</li>
+      </ul>
+      <a href="tel:5092810156" class="btn btn-big">Call to Book</a>
+    </div>
+  </div>
+
+  <section class="bikes-section">
+    <div class="wrap">
+      <div class="bike-grid">
+        {bikes.map(bike => (
+          <div class="bike-card">
+            <div class="bike-img">
+              <img src={bike.img} alt={bike.name} />
+            </div>
+            <div class="bike-name">{bike.name}</div>
+          </div>
+        ))}
+      </div>
+      <p class="guide-note">We do not rent bikes without the accompaniment of our in-person trail guide.</p>
+    </div>
+  </section>
+
+  <section class="call-cta">
+    <div class="section-label">Reserve Your Ride</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Seven days a week · All year · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); margin-bottom: 20px; }
+  .hero-sub { font-size: 18px; color: var(--leather-soft); max-width: 54ch; }
+
+  .price-strip { background: var(--rust); color: #fff; padding: 40px 24px; }
+  .price-strip-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; }
+  .price-tag { font-size: 84px; line-height: 0.82; color: #fff; padding-right: 40px; border-right: 3px solid rgba(255,255,255,0.3); }
+  .price-tag span { display: block; font-size: 13px; letter-spacing: 0.16em; margin-top: 12px; font-family: 'DM Sans', sans-serif; font-weight: 700; text-transform: uppercase; }
+  .price-includes { display: flex; flex-wrap: wrap; gap: 10px 32px; font-size: 15px; font-weight: 600; }
+  .price-includes li { list-style: none; position: relative; padding-left: 24px; }
+  .price-includes li::before { content: '→'; position: absolute; left: 0; font-weight: 900; }
+  .price-strip .btn { background: var(--ink); border-color: var(--ink); white-space: nowrap; }
+  .price-strip .btn:hover { background: var(--cream); border-color: var(--cream); color: var(--ink); }
+  @media (max-width: 900px) {
+    .price-strip-inner { grid-template-columns: 1fr; gap: 24px; }
+    .price-tag { border-right: none; border-bottom: 3px solid rgba(255,255,255,0.3); padding: 0 0 24px; font-size: 68px; }
+  }
+
+  .bikes-section { padding: 100px 0; background: var(--cream); }
+  .bike-grid { display: grid; gap: 32px; margin-bottom: 48px; }
+  @media (min-width: 600px) { .bike-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .bike-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .bike-card {
+    border: 1px solid var(--line);
+    background: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .bike-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(58,36,25,0.12); }
+  .bike-img { height: 240px; overflow: hidden; }
+  .bike-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .bike-card:hover .bike-img img { transform: scale(1.05); }
+  .bike-name { padding: 16px 20px; font-weight: 700; font-size: 15px; color: var(--leather); border-top: 3px solid var(--rust); }
+
+  .guide-note { font-size: 15px; color: var(--leather-soft); font-style: italic; }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

@@ -1,0 +1,82 @@
+---
+---
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      Arizona Dirt Bike<br>Rentals
+      <span>Wickenburg, AZ · Since 2010</span>
+    </a>
+    <nav>
+      <a href="/dirt-bike-rentals-near-me/">Advanced Riders</a>
+      <a href="/kids-dirt-bike-school/">Kids &amp; Family</a>
+      <a href="/arizona-dirt-bike-tours-reservations/">Reservations</a>
+      <a href="/reviews/">Reviews</a>
+      <a href="/motorcycles/">Motorcycles</a>
+      <a href="/contact-us/">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:5092810156" class="phone-link">509-281-0156</a>
+      <a href="tel:5092810156" class="btn">Call to Book</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    color: var(--cream);
+    border-bottom: 3px solid var(--rust);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    max-width: 1240px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+  .logo {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+    text-decoration: none;
+    color: var(--cream);
+  }
+  .logo span {
+    display: block;
+    font-size: 11px;
+    color: var(--rust);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+  }
+  nav {
+    display: none;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  nav a { text-decoration: none; color: var(--cream); padding: 4px 0; }
+  nav a:hover { color: var(--rust); }
+  .header-cta { display: flex; align-items: center; gap: 14px; }
+  .phone-link {
+    display: none;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--cream);
+  }
+  .phone-link:hover { color: var(--rust); }
+  @media (min-width: 900px) {
+    nav { display: flex; }
+    .phone-link { display: flex; }
+  }
+</style>

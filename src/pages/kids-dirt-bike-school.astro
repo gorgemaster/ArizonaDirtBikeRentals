@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = 'Kids Dirt Bike School - Arizona Dirt Bike Rentals';
+const description = 'Give your kids an unforgettable experience';
+---
+<Layout title={title} description={description}>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="section-label">For Ages 8 &amp; Up</div>
+      <h1 class="display">Give your kids an unforgettable experience!</h1>
+      <p class="hero-sub">We've got an awesome day planned for you and your kids. "That was insane!" ~ Toby. "OMG! I'm freakin' out!" ~ Marshall.</p>
+    </div>
+  </div>
+
+  <section class="kids-content">
+    <div class="wrap">
+      <div class="kids-grid">
+        <div class="kids-photo">
+          <img src="/images/2022/06/ADBR-Family-600x600.jpg" alt="Family riding dirt bikes in Arizona" />
+        </div>
+        <div class="kids-text">
+          <h2>We have everything you need:</h2>
+          <ul class="gear-list">
+            <li>All safety and riding gear</li>
+            <li>Helmet</li>
+            <li>Goggles</li>
+            <li>Knee and elbow pads</li>
+            <li>Jersey and pants</li>
+            <li>Gloves and boots</li>
+            <li>Appropriate-size dirt bike</li>
+            <li>Patient, expert instruction</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kids-photos-row">
+        <img src="/images/2022/06/IMG_20200107_120230-1200px.jpg" alt="Kids learning to ride dirt bikes" />
+        <img src="/images/2022/06/ADBR-Kid-Protection-copy.jpg" alt="Kids dirt bike safety gear" />
+      </div>
+    </div>
+  </section>
+
+  <section class="call-cta">
+    <div class="section-label">Book Your Kid's Day</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Call Doug · Seven days a week · All year</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .page-hero h1 { font-size: clamp(44px, 7vw, 96px); color: var(--leather); max-width: 18ch; margin-bottom: 20px; }
+  .hero-sub { font-size: 18px; color: var(--leather-soft); max-width: 54ch; }
+
+  .kids-content { padding: 100px 0; background: var(--cream); }
+  .kids-grid { display: grid; gap: 64px; align-items: center; margin-bottom: 80px; }
+  @media (min-width: 800px) { .kids-grid { grid-template-columns: 1fr 1fr; } }
+
+  .kids-photo { overflow: hidden; border: 1px solid var(--line); aspect-ratio: 1/1; }
+  .kids-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .kids-text h2 { font-size: 26px; font-weight: 700; margin-bottom: 24px; color: var(--leather); }
+  .gear-list { padding-left: 0; }
+  .gear-list li {
+    list-style: none;
+    padding: 10px 0 10px 28px;
+    position: relative;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 17px;
+    color: var(--leather-soft);
+  }
+  .gear-list li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 900; }
+
+  .kids-photos-row { display: grid; gap: 24px; }
+  @media (min-width: 700px) { .kids-photos-row { grid-template-columns: 1fr 1fr; } }
+  .kids-photos-row img { width: 100%; height: 360px; object-fit: cover; border: 1px solid var(--line); }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>

@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+const title = 'Contact Us - Arizona Dirt Bike Rentals';
+const description = "Our Location Wickenburg, AZ is a super-cool western town where you can enjoy a true southwest experience. And we're less than an hour from Phoenix. We offer single-track guided moto-tours and motorcycle rentals seven days a week all year. Call Doug at 509-281-0156 if you have any questions about dirt bike rentals,";
+---
+<Layout title={title} description={description}>
+
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="section-label">Get In Touch</div>
+      <h1 class="display">Contact Us.</h1>
+    </div>
+  </div>
+
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Our Location</h2>
+      <p>Wickenburg, AZ is a super-cool western town where you can enjoy a true southwest experience — less than an hour from Phoenix.</p>
+      <p>We offer single-track guided moto-tours and motorcycle rentals seven days a week, all year. Call Doug at <a href="tel:5092810156">509-281-0156</a> with any questions about dirt bike rentals, training, riding locations, and reservations. (Se Habla Español)</p>
+      <p class="note">* If you can't ride on your reservation date we'll roll any deposit over to a future date.</p>
+
+      <div class="contact-info">
+        <strong>Doug McDonald</strong>
+        <p>56550 Rancho Casitas Road<br>Wickenburg, AZ 85390</p>
+        <p><a href="tel:5092810156">Tel: 509-281-0156</a></p>
+        <p><a href="mailto:doug@arizonadirtbikerentals.com">doug@arizonadirtbikerentals.com</a></p>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-photo">
+        <img src="/images/doug-portrait.jpg" alt="Doug McDonald — Arizona Dirt Bike Rentals guide" />
+      </div>
+      <blockquote>
+        <p>"Best experience I have ever had with a dirt bike. Loved the trails and the views. Got to see a mine used in World War 2. First time riding in this terrain and he gave me great instruction."</p>
+        <cite>— Russel Roodenburg</cite>
+      </blockquote>
+    </div>
+  </div>
+
+  <section class="call-cta">
+    <div class="section-label">Ready to Ride?</div>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Phone &amp; text · Seven days a week · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .page-hero h1 { font-size: clamp(52px, 8vw, 104px); color: var(--leather); }
+
+  .contact-grid {
+    display: grid;
+    gap: 64px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  @media (min-width: 800px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+
+  .contact-grid h2 { font-size: 26px; font-weight: 700; margin-bottom: 20px; color: var(--leather); }
+  .contact-grid p { font-size: 17px; color: var(--leather-soft); margin-bottom: 16px; max-width: 52ch; }
+  .contact-grid a { color: var(--rust); font-weight: 700; text-decoration: none; }
+  .contact-grid a:hover { text-decoration: underline; }
+  .note { font-size: 14px; opacity: 0.7; }
+
+  .contact-info { margin-top: 40px; padding-top: 36px; border-top: 3px solid var(--rust); }
+  .contact-info strong { font-size: 18px; display: block; margin-bottom: 12px; color: var(--leather); }
+
+  .contact-photo { overflow: hidden; border: 1px solid var(--line); aspect-ratio: 1/1; margin-bottom: 32px; }
+  .contact-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+
+  blockquote { border-left: 4px solid var(--rust); padding-left: 20px; }
+  blockquote p { font-size: 16px; color: var(--leather); font-style: italic; margin-bottom: 12px; }
+  blockquote cite { font-style: normal; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+</style>
