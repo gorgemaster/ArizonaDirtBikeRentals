@@ -23,8 +23,8 @@ const reviews = [
       <h1 class="display">Give them a day they'll never stop <em>talking about.</em></h1>
       <p class="hero-sub">Unforgettable guided dirt bike rides in the Arizona desert. We bring the bikes, the gear, and 15 years of local knowledge. Perfect for families, kids, and advanced riders.</p>
       <div class="hero-ctas">
-        <a href="tel:5092810156" class="btn btn-big">Call 509-281-0156</a>
-        <a href="#rides" class="btn btn-big btn-outline-light">See Packages</a>
+        <a href="tel:5092810156" class="btn btn-big" target="_blank" rel="noopener noreferrer">Call 509-281-0156</a>
+        <a href="/arizona-dirt-bike-tours-reservations/" class="btn btn-big btn-outline-light">See Reservations</a>
       </div>
     </div>
   </section>
@@ -40,11 +40,11 @@ const reviews = [
         <li>KTM or Husqvarna bike</li>
         <li>Full riding gear</li>
         <li>Guided trail time</li>
-        <li>Fuel &amp; lunch</li>
+        <li>Lunch provided</li>
         <li>Pickup available</li>
         <li>Se habla español</li>
       </ul>
-      <a href="tel:5092810156" class="btn btn-big">Call to Book</a>
+      <a href="tel:5092810156" class="btn btn-big" target="_blank" rel="noopener noreferrer">Call to Book</a>
     </div>
   </div>
 
@@ -66,7 +66,7 @@ const reviews = [
           </div>
           <div class="ride-body">
             <h3>Family &amp; Kids Riding</h3>
-            <p>What kid doesn't want to ride a dirt bike? We'll give your kids a day they'll talk about for years. We teach the basics, build confidence, and pick trails that match each rider. Bikes and gear for every size. Parents ride too.</p>
+            <p>What kid doesn't want to ride a dirt bike? We'll give your kids a day they'll talk about for years. We teach the basics, build confidence, and pick trails that match each rider. Bikes and gear for every size. Parents can ride too.</p>
             <a href="/kids-dirt-bike-school/" class="btn">Book a Family Day</a>
           </div>
         </article>
@@ -90,7 +90,7 @@ const reviews = [
     <div class="wrap">
       <div class="proof-header">
         <div class="section-label">What Riders Say</div>
-        <h2 class="display section-title" style="margin: 0 auto 20px;">Over 100 five-star reviews.</h2>
+        <h2 class="display section-title" style="margin: 0 auto 20px;">Over 150 five-star reviews.</h2>
         <div class="stars">★★★★★</div>
         <span class="count">Google &amp; Facebook verified</span>
       </div>
@@ -111,8 +111,8 @@ const reviews = [
     <div class="photo-break-bg"></div>
     <div class="photo-break-content">
       <span class="eyebrow">The Desert Is Calling</span>
-      <h2 class="display">Built for <em>dirt bikes.</em></h2>
-      <p><strong>Dry trails in January. Technical rock gardens. Flowing singletrack through saguaros. Wide open desert washes. This is where winter riding lives.</strong></p>
+      <h2 class="display">The Trip They'll Talk About for Years</h2>
+      <p>Bring the kids to Arizona and put them on a dirt bike for the first time. We provide everything: bikes, gear, guides, and trails that match every skill level. Winter sunshine, open desert, and an experience they won't forget.</p>
     </div>
   </section>
 
@@ -126,7 +126,6 @@ const reviews = [
         <div class="why-text">
           <div class="section-label">Why Wickenburg</div>
           <h2 class="display section-title">15 years in the saddle. Thousands of happy riders.</h2>
-          <p>Wickenburg sits just north of Phoenix in some of the best winter riding terrain on the planet. We've been guiding here since 2010. We know which trails work for a nervous first-timer and which ones will push an expert rider to their limit.</p>
           <p>That's why people fly in from Oregon, drive down from Canada, and come back year after year.</p>
           <div class="stats">
             <div>
@@ -152,12 +151,12 @@ const reviews = [
     <div class="wrap">
       <div class="meet-grid">
         <div class="meet-img">
-          <img src="/images/doug-portrait.jpg" alt="Doug McDonald, owner and guide" />
+          <img src="/images/doug-portrait.webp" alt="Doug McDonald, owner and guide" />
         </div>
         <div>
           <div class="section-label">Your Guide</div>
           <h2 class="display">Meet Doug.</h2>
-          <p>Doug McDonald has been riding these trails and running this business since 2010. He's the guy who picks you up, sets up your bike, teaches the skills, and leads the ride. No middlemen. No call centers. You call, he answers.</p>
+          <p>Doug McDonald has been riding these trails and running this business since 2010. He's the guy who picks you up, sets up your bike, teaches the skills, and leads the ride.</p>
           <p>He'll meet you where you are as a rider and build a day around what you want out of it. That's why people come back year after year.</p>
           <a href="/contact-us/" class="btn" style="margin-top: 12px;">Call Doug Directly</a>
         </div>
@@ -172,7 +171,7 @@ const reviews = [
       <div class="section-label">Ready to Ride?</div>
       <h2 class="display">Let's go <em>riding.</em></h2>
       <p class="lede"><strong>Booking is simple. Call or text Doug, tell him what you're looking for, and he'll get you on the calendar.</strong></p>
-      <a href="tel:5092810156" class="final-phone">509 · 281 · 0156</a>
+      <a href="tel:5092810156" class="final-phone" target="_blank" rel="noopener noreferrer">509 · 281 · 0156</a>
       <p class="final-note">Phone &amp; text · Se habla español</p>
     </div>
   </section>
@@ -277,9 +276,9 @@ const reviews = [
 
   /* Rides */
   .rides { background: var(--cream); padding: 120px 0; }
-  .rides-header { display: grid; gap: 32px; margin-bottom: 64px; align-items: end; }
+  .rides-header { display: grid; gap: 32px; margin-bottom: 64px; align-items: center; }
   @media (min-width: 800px) { .rides-header { grid-template-columns: 1.5fr 1fr; } }
-  .rides-header p { font-size: 19px; color: var(--leather-soft); max-width: 42ch; }
+  .rides-header p { font-size: clamp(19px, 1.8vw, 24px); color: var(--leather-soft); max-width: 42ch; line-height: 1.5; }
   .ride-grid { display: grid; gap: 32px; }
   @media (min-width: 900px) { .ride-grid { grid-template-columns: 1fr 1fr; } }
   .ride-card {
@@ -394,7 +393,7 @@ const reviews = [
   .photo-break-content { position: relative; max-width: 1240px; margin: 0 auto; padding: 100px 24px; width: 100%; }
   .photo-break h2 { font-size: clamp(40px, 6.5vw, 88px); max-width: 16ch; color: var(--cream); margin-bottom: 20px; }
   .photo-break h2 em { font-style: normal; color: var(--rust); }
-  .photo-break p { font-size: 19px; max-width: 50ch; color: rgba(253,252,249,0.85); }
+  .photo-break p { font-size: clamp(21px, 2vw, 26px); font-weight: 700; max-width: 50ch; color: rgba(253,252,249,0.85); }
 
   /* Why */
   .why { background: var(--cream); padding: 120px 0; }
