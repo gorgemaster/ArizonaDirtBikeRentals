@@ -133,10 +133,14 @@ const reviews = [
   @media (min-width: 800px) { .intro-grid { grid-template-columns: 1fr 1fr; } }
   .intro-text p { font-size: 17px; color: var(--leather-soft); margin-bottom: 16px; max-width: 52ch; }
 
-  .intro-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
-  .stat { padding: 28px 16px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--rust); }
-  .stat-num { font-size: clamp(32px, 4vw, 52px); color: var(--leather); display: block; }
-  .stat-label { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--leather-soft); margin-top: 6px; display: block; }
+  .intro-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center; }
+  .stat { padding: 28px 12px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--rust); min-width: 0; }
+  .stat-num { font-size: clamp(28px, 4vw, 52px); color: var(--leather); display: block; }
+  .stat-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--leather-soft); margin-top: 6px; display: block; }
+  @media (max-width: 480px) {
+    .intro-stats { grid-template-columns: 1fr; gap: 12px; }
+    .stat { padding: 20px 16px; }
+  }
 
   .reviews-section { padding: 100px 0; background: var(--cream); }
   .reviews-grid { display: grid; gap: 24px; margin-top: 48px; }

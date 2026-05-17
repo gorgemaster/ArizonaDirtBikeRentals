@@ -85,6 +85,8 @@ a { color: inherit; }
   background: var(--rust);
 }
 
+.final-phone { word-spacing: -0.1em; white-space: nowrap; }
+
 .section-title {
   font-size: clamp(42px, 6.5vw, 84px);
   max-width: 18ch;
