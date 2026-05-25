@@ -171,6 +171,7 @@ const reviews = [
       <div class="section-label">Ready to Ride?</div>
       <h2 class="display">Let's go <em>riding.</em></h2>
       <p class="lede"><strong>Booking is simple. Call or text Doug, tell him what you're looking for, and he'll get you on the calendar.</strong></p>
+      <p class="reserve-label">Reserve Your Day</p>
       <a href="tel:5092810156" class="final-phone" target="_blank" rel="noopener noreferrer">509 · 281 · 0156</a>
       <p class="final-note">Phone &amp; text · Se habla español</p>
     </div>
@@ -459,6 +460,7 @@ const reviews = [
   .final-cta h2 { font-size: clamp(52px, 8.5vw, 120px); margin-bottom: 28px; color: var(--cream); }
   .final-cta h2 em { font-style: normal; color: var(--rust); }
   .final-cta .lede { font-size: 19px; max-width: 46ch; margin: 0 auto 32px; color: rgba(253,252,249,0.8); }
+  .reserve-label { font-size: clamp(20px, 2vw, 28px); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 0; }
   .final-phone {
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 900;
@@ -466,9 +468,9 @@ const reviews = [
     color: var(--rust);
     text-decoration: none;
     display: block;
-    margin: 24px 0;
+    margin: 4px 0 24px;
     letter-spacing: -0.01em;
   }
   .final-phone:hover { color: var(--cream); }
-  .final-note { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(253,252,249,0.55); font-weight: 600; }
+  .final-note { font-size: 19px; letter-spacing: 0.18em; text-transform: uppercase; color: #ffffff; font-weight: 600; }
 </style>
