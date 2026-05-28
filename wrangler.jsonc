@@ -4,7 +4,6 @@
 	"name": "arizona-dirt-bikes",
 	"assets": {
 		"directory": "./dist",
-		"binding": "ASSETS"
 	},
 	"observability": { "enabled": true }
 }
