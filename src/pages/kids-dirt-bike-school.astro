@@ -2,8 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 const title = 'Kids Dirt Bike School - Arizona Dirt Bike Rentals';
 const description = 'Give your kids an unforgettable experience';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Kids Dirt Bike School',
+  serviceType: 'Kids Dirt Bike Lessons and Guided Riding',
+  description: 'Dirt bike lessons and guided rides for kids ages 8 and up in Wickenburg, Arizona. Includes all safety and riding gear, the latest motorcycles with custom upgrades, one-on-one training, kid-friendly trails, and lunch.',
+  url: 'https://arizonadirtbikerentals.com/kids-dirt-bike-school/',
+  areaServed: [
+    { '@type': 'City', name: 'Wickenburg', containedInPlace: { '@type': 'State', name: 'Arizona' } },
+    { '@type': 'City', name: 'Phoenix', containedInPlace: { '@type': 'State', name: 'Arizona' } },
+  ],
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Arizona Dirt Bike Rentals',
+    url: 'https://arizonadirtbikerentals.com',
+  },
+};
 ---
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={schema}>
 
   <div class="page-hero">
     <div class="wrap hero-inner">

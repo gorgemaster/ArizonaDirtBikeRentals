@@ -3,6 +3,24 @@ import Layout from '../layouts/Layout.astro';
 const title = 'Motorcycles - Arizona Dirt Bike Rentals';
 const description = 'We rent the latest Husqvarna and KTM dirt bikes in the Wickenburg, Phoenix, Arizona area. We have 2-strokes and 4-stroke motorcycles to choose from.';
 
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'KTM & Husqvarna Dirt Bike Rentals',
+  serviceType: 'Off-Road Motorcycle Rental',
+  description: 'Rent the latest KTM and Husqvarna off-road motorcycles in Wickenburg, Arizona. Fleet ranges from 150cc to 300cc 2-strokes and 140cc to 450cc 4-strokes, all with Rekluse auto-clutch and custom suspension. All-inclusive at $375 per rider per day — gear, gas, lunch, and a trail guide included. Bikes are prepped and transported to the trails.',
+  url: 'https://arizonadirtbikerentals.com/motorcycles/',
+  areaServed: [
+    { '@type': 'City', name: 'Wickenburg', containedInPlace: { '@type': 'State', name: 'Arizona' } },
+    { '@type': 'City', name: 'Phoenix', containedInPlace: { '@type': 'State', name: 'Arizona' } },
+  ],
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Arizona Dirt Bike Rentals',
+    url: 'https://arizonadirtbikerentals.com',
+  },
+};
+
 const bikes = [
   {
     name: '2023 KTM 300 XC',
@@ -53,7 +71,7 @@ const bikes = [
   },
 ];
 ---
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={schema}>
 
   <div class="page-hero">
     <div class="wrap">

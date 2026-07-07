@@ -2,6 +2,7 @@
 	"compatibility_date": "2026-04-17",
 	"compatibility_flags": ["nodejs_compat"],
 	"name": "arizonadirtbikerentals",
+	"account_id": "378c73be2c91baa50ca4dfc0730cf99f",
 	"assets": {
 		"directory": "./dist",
 	},

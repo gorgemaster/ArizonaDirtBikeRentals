@@ -7,16 +7,57 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  schema?: Record<string, unknown>;
 }
 
 const {
   title = 'Arizona Dirt Bike Rentals',
   description = 'Unforgettable guided dirt bike rides in Wickenburg, Arizona.',
-  canonical = new URL(Astro.url.pathname, Astro.site).href
+  canonical = new URL(Astro.url.pathname, Astro.site).href,
+  schema,
 } = Astro.props;
+
+const OG_IMAGE = 'https://arizonadirtbikerentals.com/images/2021/10/Arizona-Dirt-Bike-Rentals-Share-Feature-Image-1200-628-60.jpg';
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Arizona Dirt Bike Rentals',
+  url: 'https://arizonadirtbikerentals.com',
+  telephone: '+15092810156',
+  description: 'Guided dirt bike tours, motorcycle rentals, and off-road training in Wickenburg, Arizona. All-inclusive rides featuring KTM and Husqvarna bikes, full gear, lunch, and an expert trail guide. Seven days a week, all year.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '56550 Rancho Casitas Road',
+    addressLocality: 'Wickenburg',
+    addressRegion: 'AZ',
+    postalCode: '85390',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.19802454030114,
+    longitude: -112.85769701023384,
+  },
+  openingHours: 'Mo-Su 07:00-19:00',
+  priceRange: '$$',
+  image: OG_IMAGE,
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://arizonadirtbikerentals.com/images/logo.png',
+  },
+};
 ---
 <html lang="en">
   <head>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-HK5N9QQSM4"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HK5N9QQSM4');
+    </script>
+
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,6 +65,27 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Arizona Dirt Bike Rentals" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={OG_IMAGE} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={OG_IMAGE} />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
