@@ -177,6 +177,24 @@ const reviews = [
     </div>
   </section>
 
+  <!-- Instagram feed -->
+  <section class="ig-feed">
+    <div class="wrap ig-feed-wrap">
+      <div class="section-label" style="justify-content: center;">Follow The Ride</div>
+      <h2 class="display section-title">Straight from the trail.</h2>
+      <a href="https://www.instagram.com/arizonadirtbikerentals/" class="ig-link" target="_blank" rel="noopener noreferrer">@arizonadirtbikerentals</a>
+      <div class="ig-widget">
+        <behold-widget feed-id="bEaBB6HPzzDUJaqzWjMh"></behold-widget>
+        <script>
+          (() => {
+            const d=document,s=d.createElement("script");s.type="module";
+            s.src="https://w.behold.so/widget.js";d.head.append(s);
+          })();
+        </script>
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
@@ -473,4 +491,23 @@ const reviews = [
   }
   .final-phone:hover { color: var(--cream); }
   .final-note { font-size: 19px; letter-spacing: 0.18em; text-transform: uppercase; color: #ffffff; font-weight: 600; }
+
+  /* Instagram feed */
+  .ig-feed { background: var(--cream); padding: 120px 0; border-top: 1px solid var(--line); }
+  .ig-feed-wrap { text-align: center; }
+  .ig-feed .section-title { margin: 0 auto 20px; }
+  .ig-link {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: var(--rust);
+    text-decoration: none;
+    margin-bottom: 48px;
+  }
+  .ig-link:hover { color: var(--leather); }
+  .ig-widget { max-width: 960px; margin: 0 auto; }
+  @media (max-width: 700px) {
+    .ig-feed { padding: 80px 0; }
+  }
 </style>
