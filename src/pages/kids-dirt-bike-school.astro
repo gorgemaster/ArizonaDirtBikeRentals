@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const title = 'Kids Dirt Bike School - Arizona Dirt Bike Rentals';
-const description = 'Give your kids an unforgettable experience';
+const title = 'Kids Dirt Bike School & Lessons in Arizona - Ages 8 and Up';
+const description = 'Kids dirt bike lessons and guided family rides in Wickenburg, Arizona. Ages 8 and up. Bikes, gear, and lunch included. $375 per rider.';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -20,8 +20,53 @@ const schema = {
     url: 'https://arizonadirtbikerentals.com',
   },
 };
+
+const daySteps = [
+  { lead: 'Gear up.', body: 'We meet up and get every rider fitted. Helmet, goggles, boots, and pads all get sized before anyone touches a bike.' },
+  { lead: 'Bike basics.', body: 'A safety talk and a walk through the controls. Clutch, throttle, brakes, and how to sit and stand on the bike. Nobody rides until they understand how it all works.' },
+  { lead: 'First riding.', body: 'Wide open flat ground with plenty of space and one on one coaching. Starting, stopping, turning, and shifting. This is where the confidence gets built, and we stay here as long as your kid needs.' },
+  { lead: 'Onto the trails.', body: 'Once your rider is steady, we head out. Doug rides in front and sets a pace that matches the slowest person in the group.' },
+  { lead: 'Break and lunch.', body: 'Food, water, and shade. Kids talk nonstop about what they just did.' },
+  { lead: 'More trail time.', body: 'Terrain steps up as skills improve. Sand washes, gentle hills, and some real desert singletrack if the group is ready for it.' },
+  { lead: 'Wrap up.', body: "Photos, high fives, and a kid who won't stop talking about it on the drive home." },
+];
+
+const bringList = [
+  'Long pants and a long sleeve shirt',
+  'Socks that go up past the ankle',
+  'Sunscreen and sunglasses',
+  'A water bottle',
+  'A change of clothes for the drive home',
+  'A camera or phone for photos',
+];
+
+const faqs = [
+  { q: 'How old does my child have to be?', a: "We start at age 8. Younger than that and most kids aren't big enough to safely handle the bikes we run." },
+  { q: 'My kid has never ridden anything. Is that a problem?', a: 'Not at all. Most of the kids who come here are first timers, and the whole day is designed around teaching from zero.' },
+  { q: 'How much does it cost?', a: '$375 per rider. That covers the bike, all safety gear, one on one instruction, guided trail time, snacks, and lunch.' },
+  { q: 'Do I need to bring a bike or gear?', a: 'No. Everything is included and sized for your rider.' },
+  { q: 'Can more than one kid come?', a: 'Yes. We take families and small groups all the time, and we adjust the day so every rider gets what they need.' },
+  { q: 'How long is the day?', a: "Plan on four to six hours. That includes gear fitting, instruction, trail riding, and a lunch break. We go at your kid's pace rather than watching the clock." },
+  { q: "What's the best time of year?", a: 'October through April is prime time. Summer mornings work too, but we start early to beat the heat.' },
+  { q: 'Do you speak Spanish?', a: 'Sí. Se habla español.' },
+  { q: 'How do I book?', a: "Call or text Doug at 509-281-0156. Every ride starts with a quick conversation about your kid's age, size, and experience so he can plan the day." },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      // Accent stripped here only, to avoid encoding issues in the JSON-LD; visible page text is unchanged.
+      text: f.q === 'Do you speak Spanish?' ? 'Si. Se habla espanol.' : f.a,
+    },
+  })),
+};
 ---
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={[schema, faqSchema]}>
 
   <div class="page-hero">
     <div class="wrap hero-inner">
@@ -41,35 +86,121 @@ const schema = {
     </div>
   </div>
 
-  <section class="kids-content">
+  <section class="intro-lede">
+    <div class="wrap intro-lede-inner">
+      <span class="intro-bar" aria-hidden="true"></span>
+      <p>Most kids who show up here have never touched a dirt bike. That's exactly who this day is built for. We start slow, in an open area with no traffic and nothing to run into, and we don't move on until your kid is ready. By lunch they're riding real trails through the Arizona desert with a grin they can't wipe off. Parents usually end up filming the whole thing.</p>
+      <span class="intro-bar" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="wrap split-grid">
+      <div class="split-photo">
+        <img src="/images/2022/06/ADBR-Family-600x600.jpg" alt="Family riding dirt bikes in Arizona" />
+      </div>
+      <div class="split-text">
+        <div class="section-label">No Experience Needed</div>
+        <h2 class="display section-title">Never ridden before? Good.</h2>
+        <p>You don't need any experience. You don't need to own gear. You don't need to know anything about motorcycles.</p>
+        <p>Doug has spent 15 years teaching first-time riders, and he's figured out what works. Kids learn one thing at a time, at their own pace, and nobody gets pushed past what they're comfortable with. Some kids are ripping around in 20 minutes. Others take the whole morning to feel steady, and that's fine too. The day gets built around your kid, not the other way around.</p>
+        <p>If your child is nervous, tell Doug when you call. He'll plan for it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="day-section">
     <div class="wrap">
-      <div class="kids-grid">
-        <div class="kids-photo">
-          <img src="/images/2022/06/ADBR-Family-600x600.jpg" alt="Family riding dirt bikes in Arizona" />
-        </div>
-        <div class="kids-text">
-          <h2>If your child is 8 years and up we've got an awesome day planned for them.</h2>
-          <p><strong>We have everything you need:</strong></p>
-          <ul class="gear-list">
-            <li>All the safety/riding gear. (See below)</li>
-            <li>The latest motorcycles with customized upgrades.</li>
-            <li>One-on-one training.</li>
-            <li>A range of terrain and kid-friendly trails.</li>
-            <li>Snacks and lunch.</li>
-            <li>A ton of thrills and excitement.</li>
-          </ul>
+      <div class="section-label">The Schedule</div>
+      <h2 class="display section-title">What the day looks like</h2>
+      <div class="day-grid">
+        <ol class="day-steps">
+          {daySteps.map(step => (
+            <li><strong>{step.lead}</strong> {step.body}</li>
+          ))}
+        </ol>
+        <div class="day-photo">
+          <img src="/images/2022/06/IMG_20200107_120230-1200px.jpg" alt="Kids learning to ride dirt bikes" />
         </div>
       </div>
+      <p class="day-note">Most families are out here four to six hours. We don't run a clock on it. Some kids are ready to go big and want every minute, and some are grinning and worn out by hour four. Either way you get the same day, the same instruction, and the same price.</p>
+    </div>
+  </section>
 
-      <div class="kids-photos-row">
-        <img src="/images/2022/06/IMG_20200107_120230-1200px.jpg" alt="Kids learning to ride dirt bikes" />
+  <section class="split-section">
+    <div class="wrap split-grid">
+      <div class="split-text">
+        <div class="section-label">Safety First</div>
+        <h2 class="display section-title">Safety comes first, every time</h2>
+        <p>We hand out full gear for every rider, included in the price. That means a helmet, goggles, chest protector, knee pads, elbow pads, gloves, and boots. We stock kid sizes, so nothing is too big or sliding around.</p>
+        <p>Every group rides with Doug leading. He keeps eyes on every rider, sets the pace for the slowest person in the group, and picks trails that match what your kid can handle that day. We ride on open desert land with no cars and no cross traffic.</p>
+        <p>Bikes get set up for each rider before they climb on. Suspension, seat height, and the power delivery all get adjusted so the bike fits the kid instead of the kid fighting the bike.</p>
+      </div>
+      <div class="split-photo">
         <img src="/images/2022/06/ADBR-Kid-Protection-copy.jpg" alt="Kids dirt bike safety gear" />
       </div>
     </div>
   </section>
 
+  <section class="copy-section">
+    <div class="wrap">
+      <div class="section-label">The Fleet</div>
+      <h2 class="display section-title">The bikes</h2>
+      <p>We run late model KTM and Husqvarna machines with upgrades, and we keep a range of sizes so we can match your child to the right bike. Small riders start on smaller displacement bikes with mellow power. Bigger or more confident kids move up.</p>
+      <p>Everything is maintained in house. You're not renting a beat up loaner. These are the same quality bikes our advanced riders take out on technical trails.</p>
+    </div>
+  </section>
+
+  <section class="copy-section alt">
+    <div class="wrap">
+      <div class="section-label">Family Day</div>
+      <h2 class="display section-title">Parents ride too</h2>
+      <p>This is a family day, not a drop off. Plenty of parents come out planning to watch and end up on a bike within the hour. We have adult sizes in bikes and gear, and Doug will teach you the same way he teaches your kid.</p>
+      <p>If you'd rather stay on the sidelines with a camera, that works too. Some of the best photos our families have came from a mom who never left the truck.</p>
+    </div>
+  </section>
+
+  <section class="copy-section">
+    <div class="wrap">
+      <div class="section-label">The Location</div>
+      <h2 class="display section-title">Where we ride</h2>
+      <p>We're based in Wickenburg, Arizona, about an hour northwest of Phoenix and an easy drive from Scottsdale, Glendale, Surprise, and Prescott. Families fly into Phoenix Sky Harbor, rent a car, and make a weekend of it.</p>
+      <p>The terrain out here is why people keep coming back. Wide open desert, sandy washes, rolling hills, and hundreds of miles of trails that range from beginner flat to genuinely technical. Winter is beautiful, with sunshine and comfortable temperatures while the rest of the country is frozen.</p>
+      <p>Need a ride? Pickup is available. Ask Doug when you call.</p>
+    </div>
+  </section>
+
+  <section class="bring-section">
+    <div class="wrap">
+      <div class="section-label">Pack List</div>
+      <h2 class="display section-title">What to bring</h2>
+      <ul class="gear-list">
+        {bringList.map(item => <li>{item}</li>)}
+      </ul>
+      <p class="bring-note">We handle the rest, including all gear, the bikes, snacks, and lunch.</p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="wrap">
+      <div class="section-label">Common Questions</div>
+      <h2 class="display section-title">Frequently asked questions</h2>
+      <div class="faq-list">
+        {faqs.map(item => (
+          <div class="faq-item">
+            <p class="faq-q">{item.q}</p>
+            <p class="faq-a">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="call-cta">
-    <div class="section-label">Book Your Kid's Day</div>
+    <div class="section-label">Book Your Day</div>
+    <h2 class="display cta-heading">Your kids will remember this forever</h2>
+    <p class="cta-lede">They'll remember the day they rode a dirt bike through the Arizona desert.</p>
+    <p class="cta-lede">Call Doug and let's get it on the calendar.</p>
     <p class="reserve-label">Reserve Your Day</p>
     <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
     <p class="final-note">Call Doug · Seven days a week · All year</p>
@@ -106,15 +237,48 @@ const schema = {
   .hero-image { overflow: hidden; border: 1px solid var(--line); }
   .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  .kids-content { padding: 100px 0; background: var(--cream); }
-  .kids-grid { display: grid; gap: 64px; align-items: center; margin-bottom: 80px; }
-  @media (min-width: 800px) { .kids-grid { grid-template-columns: 1fr 1fr; } }
+  /* Opening lede */
+  .intro-lede { background: var(--cream); padding: 90px 0 40px; }
+  .intro-lede-inner { display: flex; align-items: center; justify-content: center; gap: 28px; max-width: 900px; text-align: left; }
+  .intro-bar { flex: 0 0 4px; width: 4px; align-self: stretch; background: var(--rust); }
+  .intro-lede p { font-size: clamp(19px, 1.8vw, 22px); font-weight: 500; color: var(--leather); line-height: 1.5; }
+  @media (max-width: 700px) { .intro-bar { display: none; } }
 
-  .kids-photo { overflow: hidden; border: 1px solid var(--line); aspect-ratio: 1/1; }
-  .kids-photo img { width: 100%; height: 100%; object-fit: cover; }
+  /* Image + text split sections */
+  .split-section { background: var(--cream-deep); padding: 100px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .split-grid { display: grid; gap: 64px; align-items: center; }
+  @media (min-width: 800px) { .split-grid { grid-template-columns: 1fr 1fr; } }
+  .split-photo { overflow: hidden; border: 1px solid var(--line); aspect-ratio: 1/1; }
+  .split-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .split-text p { font-size: 19px; color: var(--leather-soft); max-width: 54ch; margin-bottom: 16px; }
+  .split-text p:last-child { margin-bottom: 0; }
 
-  .kids-text h2 { font-size: 26px; font-weight: 700; margin-bottom: 24px; color: var(--leather); }
-  .gear-list { padding-left: 0; }
+  /* What the day looks like */
+  .day-section { background: var(--cream); padding: 100px 0; }
+  .day-grid { display: grid; gap: 56px; margin-top: 48px; align-items: start; }
+  @media (min-width: 900px) { .day-grid { grid-template-columns: 1.4fr 1fr; } }
+  .day-steps { list-style: none; padding-left: 0; }
+  .day-steps li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 19px;
+    color: var(--leather-soft);
+  }
+  .day-steps li:first-child { padding-top: 0; }
+  .day-steps li strong { color: var(--leather); font-weight: 800; }
+  .day-photo { overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3/4; position: sticky; top: 24px; }
+  .day-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .day-note { font-size: 19px; color: var(--leather-soft); max-width: 68ch; margin-top: 48px; padding-top: 40px; border-top: 3px solid var(--rust); }
+
+  /* Simple copy sections */
+  .copy-section { background: var(--cream); padding: 100px 0; }
+  .copy-section.alt { background: var(--cream-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .copy-section p { font-size: 19px; color: var(--leather-soft); max-width: 62ch; margin-bottom: 16px; }
+  .copy-section p:last-child { margin-bottom: 0; }
+
+  /* What to bring */
+  .bring-section { background: var(--cream-deep); padding: 100px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .gear-list { padding-left: 0; margin-top: 40px; max-width: 62ch; }
   .gear-list li {
     list-style: none;
     padding: 10px 0 10px 28px;
@@ -124,12 +288,21 @@ const schema = {
     color: var(--leather-soft);
   }
   .gear-list li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 900; }
+  .bring-note { font-size: 19px; color: var(--leather-soft); max-width: 62ch; margin-top: 28px; font-style: italic; }
 
-  .kids-photos-row { display: grid; gap: 24px; }
-  @media (min-width: 700px) { .kids-photos-row { grid-template-columns: 1fr 1fr; } }
-  .kids-photos-row img { width: 100%; height: 720px; object-fit: cover; border: 1px solid var(--line); }
+  /* FAQ */
+  .faq-section { background: var(--cream); padding: 100px 0; }
+  .faq-list { margin-top: 48px; max-width: 76ch; }
+  .faq-item { padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-q { font-size: 20px; font-weight: 800; color: var(--leather); margin-bottom: 10px; }
+  .faq-a { font-size: 19px; color: var(--leather-soft); }
 
-  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 80px 24px; border-top: 3px solid var(--rust); }
+  /* Final CTA */
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 90px 24px 80px; border-top: 3px solid var(--rust); }
+  .cta-heading { font-size: clamp(44px, 6.5vw, 84px); color: var(--cream); margin: 8px 0 24px; }
+  .cta-lede { font-size: 19px; max-width: 64ch; margin: 0 auto 12px; color: rgba(253,252,249,0.8); }
+  .cta-lede:last-of-type { margin-bottom: 40px; }
   .reserve-label { font-size: clamp(20px, 2vw, 28px); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
   .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
   .final-phone:hover { color: var(--cream); }
@@ -137,8 +310,6 @@ const schema = {
 
   @media (max-width: 899px) {
     .hero-sub { font-size: 22px; }
-    .kids-text h2 { font-size: 22px; }
-    .kids-text p { font-size: 20px; }
-    .gear-list li { font-size: 19px; }
+    .day-photo { position: static; }
   }
 </style>
