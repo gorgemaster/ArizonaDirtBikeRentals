@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const title = 'Arizona Dirt Bike Rentals - KTM & Husqvarna Motorcycle Tours & Training';
-const description = 'Off-road motorcycle tours, training, and moto rentals. Ride the latest Husqvarna and KTM dirt bikes and the best Wickenburg, Phoenix, Arizona moto trails.';
+const title = 'Dirt Bike Rentals Near Phoenix, AZ | Guided Singletrack for Advanced Riders';
+const description = 'Guided dirt bike rentals an hour from Phoenix. Late-model KTM and Husqvarna set up with Rekluse and Tubliss, matched to your skill level. Gear, gas, and lunch included.';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -13,6 +13,7 @@ const schema = {
   areaServed: [
     { '@type': 'City', name: 'Wickenburg', containedInPlace: { '@type': 'State', name: 'Arizona' } },
     { '@type': 'City', name: 'Phoenix', containedInPlace: { '@type': 'State', name: 'Arizona' } },
+    { '@type': 'City', name: 'Scottsdale', containedInPlace: { '@type': 'State', name: 'Arizona' } },
   ],
   provider: {
     '@type': 'LocalBusiness',
@@ -21,19 +22,120 @@ const schema = {
   },
 };
 
-const reviews = [
+// Existing testimonials, unchanged wording. Split into three blocks so they
+// don't sit in one long stack.
+const reviewsTraveled = [
   { quote: "My buddy and I flew out from New England to visit the area and rented bikes from Doug — was a very good experience. Clearly Doug is good at making the best of your skill level and was able to take me into some nice harder enduro areas. I will be back. Was nice to see what more Arizona has to offer.", author: "Jacob Gleason" },
-  { quote: "We had an amazing dirt biking experience with Arizona Dirt Bike Rentals, thanks to Doug! The dirt bikes were top-notch, providing a thrilling ride. Doug's guidance was excellent — knowledgeable, friendly, and ensuring everyone had a blast. Highly recommend for an unforgettable adventure!", author: "Michael Colombo" },
-  { quote: "Doug was a fantastic host, he set my group up with all the gear and motorcycles matching our size and ability. Our group rode Husky 450s with Rekluse clutches. Doug communicated effectively and matched trails with our abilities while keeping the riding a challenge.", author: "Adam Herried" },
-  { quote: "Awesome experience! Doug set us up with all the gear we needed, had great knowledge of the trails and surrounding area and the bikes ran great! Doug was very accommodating to our skill levels and was fun to share the experience with. Would definitely recommend!", author: "Caitlin Sharp" },
-  { quote: "I had an amazing time. Doug is a superb rider and down to earth gentleman. This only made me want to come back and do it again. I might even buy another bike after this experience. If you're thinking about it and not sure — just do it anyway.", author: "Jesse Ramos" },
-  { quote: "This was one of the top 3 riding days in my life. Doug is an awesome host whether it's to put you at ease, give you riding tips or just being the good guy that he is. Well prepared KTM and Husky with top of the line accessories, Tubliss and Rekluse.", author: "Charles Lapierre" },
-  { quote: "I can't say enough good things about my experience with Doug. He provides all the equipment you need and his bike set ups are awesome! I don't have a lot of riding experience, but Doug understood that and was very nice and patient with me.", author: "Jordan Moyer" },
   { quote: "Doug did a great job assessing my skills and selecting appropriate trails. We had a good time rippin' it up. He took me through a bunch of fun single track and mixed in some more open trails so I could catch my breath. I will do this again the next time I visit the Phoenix area.", author: "Doug Cooper" },
+  { quote: "I had an amazing time. Doug is a superb rider and down to earth gentleman. This only made me want to come back and do it again. I might even buy another bike after this experience. If you're thinking about it and not sure — just do it anyway.", author: "Jesse Ramos" },
+];
+
+const reviewsSetup = [
+  { quote: "Doug was a fantastic host, he set my group up with all the gear and motorcycles matching our size and ability. Our group rode Husky 450s with Rekluse clutches. Doug communicated effectively and matched trails with our abilities while keeping the riding a challenge.", author: "Adam Herried" },
+  { quote: "This was one of the top 3 riding days in my life. Doug is an awesome host whether it's to put you at ease, give you riding tips or just being the good guy that he is. Well prepared KTM and Husky with top of the line accessories, Tubliss and Rekluse.", author: "Charles Lapierre" },
   { quote: "Doug was an amazing guide for our moto adventure!! The bikes he provided were top notch, ran perfectly, and even left me wanting an upgrade to my current moto! He picked us up, took us to some amazing trails, and gave us a few riding pointers along the way!", author: "Nick Hardin" },
 ];
+
+const reviewsMatched = [
+  { quote: "We had an amazing dirt biking experience with Arizona Dirt Bike Rentals, thanks to Doug! The dirt bikes were top-notch, providing a thrilling ride. Doug's guidance was excellent — knowledgeable, friendly, and ensuring everyone had a blast. Highly recommend for an unforgettable adventure!", author: "Michael Colombo" },
+  { quote: "Awesome experience! Doug set us up with all the gear we needed, had great knowledge of the trails and surrounding area and the bikes ran great! Doug was very accommodating to our skill levels and was fun to share the experience with. Would definitely recommend!", author: "Caitlin Sharp" },
+  { quote: "I can't say enough good things about my experience with Doug. He provides all the equipment you need and his bike set ups are awesome! I don't have a lot of riding experience, but Doug understood that and was very nice and patient with me.", author: "Jordan Moyer" },
+];
+
+const daySteps = [
+  { lead: 'The call.', body: 'Every ride starts with a quick conversation with Doug. Tell him what you ride at home, what you want out of the day, and how hard you want to push. He plans the trails from there.' },
+  { lead: 'Drive to the pin.', body: 'Once your deposit is down, Doug sends you a GPS pin for the meetup, chosen for your skill level. It is near Wickenburg. You drive your own vehicle straight to that spot and meet Doug there. Knowing the pin ahead of time also lets you work out your real drive time.' },
+  { lead: 'Gear up.', body: 'Show up dressed relaxed. Doug provides all the riding and safety gear and kits you out at the staging area. He fits you to the right machine for your skill level and sets the bike up the way you like it.' },
+  { lead: 'Warm up.', body: 'You get time to get a feel for the bike around the staging area. Once Doug sees you have the machine under control, you ride.' },
+  { lead: 'Ride.', body: 'Doug rides in front and picks a line through terrain that matches the group. He mixes tight singletrack with more open trail so you can catch your breath, then steps it up as the day goes on.' },
+  { lead: 'Lunch and water.', body: 'Food, shade, and a break in the middle of the day. It is included.' },
+  { lead: 'More trail time.', body: 'The afternoon goes as far as the group wants to take it. Some riders want every minute. Some are worn out and grinning by mid-afternoon. Either way you get the same day and the same price.' },
+  { lead: 'Wrap up.', body: 'Photos, then Doug hauls the bikes back. You head out.' },
+];
+
+// Bike descriptions reproduced from the Motorcycles page. Advanced trail and
+// enduro models only; the full fleet lives on /motorcycles/.
+const bikes = [
+  {
+    name: '2023 KTM 300 XC',
+    blurb: 'Maximum power at the least possible weight and smooth, linear power delivery – the 2023 KTM 300 XC is set to take the Open category back to school. Churning out massive power from an engine weighing only 52.6 lb, the KTM 300 XC sets the benchmark when it comes to power-to-weight ratios.',
+    upgrades: 'Rekluse "no-stall" auto-clutch, custom-tuned suspension',
+  },
+  {
+    name: '2023 Husqvarna TE 300i',
+    blurb: "With electronic fuel injection, smooth power delivery and impressive torque and power, the TE 300i retains the traits it's become renowned for, now with class-leading chassis and ergonomics, it offers an even more controllable and thrilling ride.",
+    upgrades: 'Rekluse "no-stall" auto-clutch, custom-tuned suspension',
+  },
+  {
+    name: '2022 Husqvarna FX 450',
+    blurb: 'The pinnacle of Husqvarna offroad competition, the FX 450 uses advanced engineering techniques to position the engine closer to the center of gravity to vastly improve handling and maneuverability with class-leading ergonomics and traction control keep the rider in full control.',
+    upgrades: 'Rekluse "no-stall" auto-clutch, Bib Moose no-flat tire inserts, tuned custom suspension',
+  },
+  {
+    name: '2023 KTM 150 XC-W',
+    blurb: "The 2022 KTM 150 XC-W TPI features KTM's proven transfer port injection technology, supreme agility, and surprising 2-stroke power, it helps elevate rider and machine. Light and friendly enough to be ridden by beginners or raced hard by experienced riders.",
+    upgrades: 'Rekluse "no-stall" auto-clutch, custom tuned suspension',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Can I rent a bike without a guide?',
+    a: 'No. We do not rent bikes without the accompaniment of our in-person trail guide. The guide is how we keep the bikes in good shape and get you to the right trails for the day.',
+  },
+  {
+    q: 'How technical does the riding get?',
+    a: 'As technical as your group wants. Doug rides in front and reads your ability during the warm up, then picks lines to match. Reviews from experienced riders mention "harder enduro areas" and trails "more challenging than we expected." He can also keep it flowing and fast if that is your thing.',
+  },
+  {
+    q: 'Can I bring my own bike?',
+    a: 'Yes. It is $250 per rider for any additional rider who brings their own bike, gas, and gear and joins an existing rental group.',
+  },
+  {
+    q: 'Do you offer coaching?',
+    a: 'Yes. Add $50 per rider per day for expert feedback and practice drills while you ride. Riders from street, track, and motocross backgrounds use this to get up to speed on desert trail riding.',
+  },
+  {
+    q: 'What do I need to bring?',
+    a: 'Just water. Doug provides all the riding and safety gear and fits you out at the staging area. Bring a hydration pack or water and show up dressed relaxed — everything else is covered.',
+  },
+  {
+    q: 'How far in advance should I book?',
+    a: "Call as soon as you know your date. We're usually booked about two weeks out, so the earlier you call the better your chance of getting the day you want.",
+  },
+  {
+    q: 'What if I have to cancel?',
+    a: "There is no cancellation refund, but you never lose your deposit. If you cancel, we forward the deposit to the next available day you can ride.",
+  },
+  {
+    q: 'Do you pick us up?',
+    a: 'No. Riders drive themselves to the meetup. Doug sends you a GPS pin for the staging area near Wickenburg, and you drive your own vehicle straight to it.',
+  },
+  {
+    q: 'Do you speak Spanish?',
+    a: 'Sí. Se habla español.',
+  },
+  {
+    q: 'How do I book?',
+    a: 'Call or text Doug at 509-281-0156. Reservations are taken over the phone, old school. Your deposit is made right there on the call, and your confirmation goes out right after.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      // Accent stripped here only, to avoid encoding issues in the JSON-LD; visible page text is unchanged.
+      text: f.q === 'Do you speak Spanish?' ? 'Si. Se habla espanol.' : f.a,
+    },
+  })),
+};
 ---
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={[schema, faqSchema]}>
 
   <section class="hero">
     <div class="hero-bg"></div>
@@ -58,7 +160,7 @@ const reviews = [
           <span class="stat-label">Established</span>
         </div>
         <div class="stat">
-          <span class="display stat-num">500+</span>
+          <span class="display stat-num">5,000+</span>
           <span class="stat-label">Guided rides</span>
         </div>
         <div class="stat">
@@ -69,11 +171,154 @@ const reviews = [
     </div>
   </section>
 
+  <section class="price-section">
+    <div class="wrap price-inner">
+      <div class="section-label">What You Get</div>
+      <h2 class="display section-title">One price. Everything handled.</h2>
+
+      <div class="price-block">
+        <div class="price-num display">$375</div>
+        <div class="price-meta">
+          <p class="price-per">Per Rider / Per Day</p>
+          <p class="price-sub">All-inclusive rent &amp; ride packages</p>
+          <p class="price-group">Groups of 4 or more only <strong>$300</strong> per rider/per day</p>
+        </div>
+      </div>
+
+      <h3 class="includes-title">This all-inclusive price includes:</h3>
+      <ul class="includes-list">
+        <li>An experienced trail guide to get you to the best trails for the conditions, your riding level, and desired terrain</li>
+        <li>All riding gear (bring your own hydration pack)</li>
+        <li>Gas</li>
+        <li>Lunch</li>
+        <li>Bikes prepped and transported to and from the trails</li>
+      </ul>
+
+      <p class="addl"><strong>$250 per rider</strong> for any additional rider who brings their own bike, gas, and gear and joins an existing rental group.</p>
+      <p class="addl">Interested in training to improve your skills and help build more confidence on the trails? Simply add on <strong>$50 per rider per day</strong> for expert feedback and practice drills while on your ride.</p>
+
+      <p class="addl"><strong>Deposit:</strong> A deposit holds your date and buys you an exclusive — that day is yours, one group only, no one else in the mix. For a single rider the deposit is the full day, $375. For groups of two or more it is 50% of the total group ride fees. If something comes up and you can't ride that day, we roll the deposit to the next day you can make. You never lose it.</p>
+
+      <p class="addl"><strong>If a bike gets damaged:</strong> You are responsible for the bike you ride. These motorcycles are very difficult to damage, but the rider is responsible for any damage that does happen.</p>
+
+      <p class="vip">Tours and training groups are limited to your group only for VIP service. Show up and ride. We'll take care of everything else.</p>
+
+      <div class="ohv-notice">
+        <strong>Please note</strong>
+        <p>We do not rent bikes without the accompaniment of our in-person trail guide.</p>
+      </div>
+
+      <a href="tel:5092810156" class="btn btn-big">Call to Book — 509-281-0156</a>
+    </div>
+  </section>
+
   <section class="reviews-section">
     <div class="wrap">
       <div class="section-label">Advanced Rider Reviews</div>
       <div class="reviews-grid">
-        {reviews.map(r => (
+        {reviewsTraveled.map(r => (
+          <blockquote class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">{r.quote}</p>
+            {r.author && <cite>— {r.author}</cite>}
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="day-section">
+    <div class="wrap">
+      <div class="section-label">How The Day Works</div>
+      <h2 class="display section-title">What the day looks like</h2>
+      <p class="lede">No two riders want the same day, so we build it around you. Here is the shape of it.</p>
+      <ol class="day-steps">
+        {daySteps.map(step => (
+          <li><strong>{step.lead}</strong> {step.body}</li>
+        ))}
+      </ol>
+      <p class="day-note">Most days run 3 to 5 hours. How long really comes down to your conditioning — we ride until you've had your fill. We do not run a clock on it.</p>
+      <ul class="day-facts">
+        <li>Riders drive themselves to the meetup. Doug sends a GPS pin for the staging area near Wickenburg.</li>
+        <li>Five riders is the max. When Doug takes your deposit, that day is your group only.</li>
+        <li>No minimum age and no minimum skill level. You learn as you ride, and Doug matches the terrain to you.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="copy-section">
+    <div class="wrap">
+      <div class="section-label">Where You'll Ride</div>
+      <h2 class="display section-title">An hour from Phoenix, and worth the drive</h2>
+      <p>We are based in Wickenburg, a western town about an hour northwest of Phoenix and an easy drive from Scottsdale, Glendale, Surprise, and Prescott. Phoenix Sky Harbor is about 60 miles away, close to a 75-minute drive. Plenty of riders fly in, rent a car, and make a weekend of it.</p>
+      <p>The reason people come back is the terrain. The Wickenburg area has hundreds of miles of connected desert trails, from flowing singletrack to sandy washes to genuinely technical rock. You can ride for days and not repeat yourself. We ride areas near Wickenburg, chosen for the skill level of the riders. Once your deposit is down, Doug sends you a pin and you ride right from there.</p>
+
+      <blockquote class="pull-review">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Best experience I have ever had with a dirt bike. Loved the trails and the views. Got to see a mine used in World War 2. First time riding in this terrain and he gave me great instruction.</p>
+        <cite>— Russel Roodenburg</cite>
+      </blockquote>
+
+      <p><strong>When to come:</strong> September through May is prime riding season, and the weather here is hard to beat. We ride year-round — in summer we roll out around 8 in the morning, earlier when the heat calls for it.</p>
+      <p>We ride seven days a week, all year. Se habla español.</p>
+    </div>
+  </section>
+
+  <section class="bikes-section">
+    <div class="wrap">
+      <div class="section-label">The Bikes</div>
+      <h2 class="display section-title">Fresh KTM and Husqvarna, set up right</h2>
+      <p class="lede">We run late model KTM, Husqvarna, and Kawasaki rental dirt bikes. We have 150cc to 300cc 2-strokes, and 140cc to 450cc 4-strokes to choose from. The bikes advanced riders reach for:</p>
+      <div class="bike-grid">
+        {bikes.map(bike => (
+          <div class="bike-card">
+            <h3 class="bike-name">{bike.name}</h3>
+            <p class="bike-blurb">{bike.blurb}</p>
+            <p class="bike-upgrades"><span>Upgrades:</span> {bike.upgrades}</p>
+          </div>
+        ))}
+      </div>
+      <p class="bike-note">Every bike is maintained in house. You are not renting a beat up loaner.</p>
+      <p class="bike-note"><strong>How the bike gets assigned:</strong> Tell Doug the bike you want when you book and he brings that machine to the staging area. If you don't have a preference, he puts you on a bike that fits your skill level.</p>
+      <a href="/motorcycles/" class="btn" style="margin-top: 8px; display: inline-block;">See the Full Fleet</a>
+    </div>
+  </section>
+
+  <section class="reviews-section alt">
+    <div class="wrap">
+      <div class="section-label">Dialed Bikes</div>
+      <div class="reviews-grid">
+        {reviewsSetup.map(r => (
+          <blockquote class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">{r.quote}</p>
+            {r.author && <cite>— {r.author}</cite>}
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="wrap">
+      <div class="section-label">Common Questions</div>
+      <h2 class="display section-title">Questions riders ask before they call</h2>
+      <div class="faq-list">
+        {faqs.map(item => (
+          <div class="faq-item">
+            <p class="faq-q">{item.q}</p>
+            <p class="faq-a">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section">
+    <div class="wrap">
+      <div class="section-label">Read Your Riding</div>
+      <div class="reviews-grid">
+        {reviewsMatched.map(r => (
           <blockquote class="review-card">
             <div class="stars">★★★★★</div>
             <p class="quote">{r.quote}</p>
@@ -170,15 +415,101 @@ const reviews = [
     .stat { padding: 20px 16px; }
   }
 
+  /* Pricing */
+  .price-section { background: var(--cream); padding: 100px 0; }
+  .price-inner { max-width: 800px; }
+  .price-block { display: flex; align-items: center; gap: 32px; margin: 40px 0 48px; padding-bottom: 48px; border-bottom: 3px solid var(--rust); }
+  .price-num { font-size: 96px; color: var(--rust); line-height: 0.9; }
+  .price-per { font-size: 20px; font-weight: 700; color: var(--leather); margin-bottom: 4px; }
+  .price-sub { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--leather-soft); font-weight: 600; }
+  .price-group { font-size: 19px; color: var(--rust); font-weight: 600; margin-top: 8px; }
+  .price-group strong { font-weight: 800; }
+  .includes-title { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--leather); }
+  .includes-list { margin-bottom: 36px; padding-left: 0; }
+  .includes-list li {
+    list-style: none;
+    padding: 12px 0 12px 32px;
+    position: relative;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 19px;
+    color: var(--leather-soft);
+  }
+  .includes-list li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 900; }
+  .addl { font-size: 19px; color: var(--leather-soft); margin-bottom: 16px; }
+  .addl strong { color: var(--leather); }
+  .vip { font-size: 19px; color: var(--leather-soft); margin: 24px 0; }
+  .ohv-notice {
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--rust);
+    padding: 20px 24px;
+    margin: 24px 0 40px;
+    font-size: 19px;
+  }
+  .ohv-notice strong { display: block; margin-bottom: 8px; color: var(--leather); }
+  .ohv-notice p { color: var(--leather-soft); }
+
+  /* Reviews */
   .reviews-section { padding: 100px 0; background: var(--cream); }
+  .reviews-section.alt { background: var(--cream-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .reviews-grid { display: grid; gap: 24px; margin-top: 48px; }
   @media (min-width: 600px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1000px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
-
   .review-card { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--rust); padding: 28px 24px; }
   .stars { color: var(--rust); font-size: 18px; letter-spacing: 2px; margin-bottom: 14px; }
   .quote { font-size: 15px; color: var(--leather-soft); line-height: 1.65; margin-bottom: 14px; }
   cite { font-style: normal; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rust); }
+
+  /* How the day works */
+  .day-section { background: var(--cream-deep); padding: 100px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .lede { font-size: 19px; color: var(--leather-soft); max-width: 62ch; margin: 8px 0 8px; }
+  .day-steps { list-style: none; padding-left: 0; margin-top: 32px; max-width: 72ch; }
+  .day-steps li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 19px;
+    color: var(--leather-soft);
+  }
+  .day-steps li:first-child { padding-top: 0; }
+  .day-steps li strong { color: var(--leather); font-weight: 800; }
+  .day-note { font-size: 19px; color: var(--leather-soft); max-width: 68ch; margin-top: 40px; padding-top: 32px; border-top: 3px solid var(--rust); }
+  .day-facts { list-style: none; padding-left: 0; margin-top: 24px; max-width: 72ch; }
+  .day-facts li {
+    padding: 12px 0 12px 32px;
+    position: relative;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 19px;
+    color: var(--leather-soft);
+  }
+  .day-facts li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 900; }
+
+  /* Simple copy section */
+  .copy-section { background: var(--cream); padding: 100px 0; }
+  .copy-section p { font-size: 19px; color: var(--leather-soft); max-width: 62ch; margin-bottom: 16px; }
+  .copy-section p strong { color: var(--leather); }
+  .pull-review { background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--rust); padding: 28px 28px; margin: 32px 0; max-width: 62ch; }
+  .pull-review .quote { font-size: 17px; margin-bottom: 12px; }
+
+  /* Bikes */
+  .bikes-section { background: var(--cream-deep); padding: 100px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .bike-grid { display: grid; gap: 24px; margin: 40px 0 32px; }
+  @media (min-width: 800px) { .bike-grid { grid-template-columns: repeat(2, 1fr); } }
+  .bike-card { background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--rust); padding: 28px 24px; }
+  .bike-name { font-size: 21px; font-weight: 800; color: var(--leather); margin-bottom: 12px; }
+  .bike-blurb { font-size: 16px; color: var(--leather-soft); line-height: 1.6; margin-bottom: 14px; }
+  .bike-upgrades { font-size: 14px; color: var(--leather-soft); }
+  .bike-upgrades span { font-weight: 800; color: var(--rust); text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; }
+  .bike-note { font-size: 19px; color: var(--leather-soft); max-width: 62ch; margin-bottom: 16px; }
+  .bike-note strong { color: var(--leather); }
+
+  /* FAQ */
+  .faq-section { background: var(--cream); padding: 100px 0; }
+  .faq-list { margin-top: 48px; max-width: 76ch; }
+  .faq-item { padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-q { font-size: 20px; font-weight: 800; color: var(--leather); margin-bottom: 10px; }
+  .faq-a { font-size: 19px; color: var(--leather-soft); margin-bottom: 8px; }
+  .faq-a:last-child { margin-bottom: 0; }
 
   .video-section { padding: 100px 0; background: var(--cream-deep); border-bottom: 1px solid var(--line); }
   .video-embed { max-width: 400px; margin: 48px auto 0; }
@@ -193,5 +524,7 @@ const reviews = [
   @media (max-width: 899px) {
     .intro-text p { font-size: 20px; }
     .quote { font-size: 19px; }
+    .price-block { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .price-num { font-size: 72px; }
   }
 </style>
