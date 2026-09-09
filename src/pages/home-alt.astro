@@ -1,0 +1,341 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Your Next Adventure Starts Here | Arizona Dirt Bike Rentals';
+const description =
+  'Rent a dirt bike or join a guided tour and explore Arizona\'s incredible desert trails. Desert trails, epic rides, and good vibes out of Wickenburg, Arizona.';
+---
+<Layout title={title} description={description}>
+  <!-- Matches the site's font-loading method (Google Fonts CSS2 link) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700&family=Caveat:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
+  <section class="hp-alt">
+    <div class="stage">
+      <img
+        class="stage-photo"
+        src="/images/home-alt-hero.jpg"
+        alt="Rider carving through the Arizona desert at sunset with a group riding ahead."
+        width="1150"
+        height="1725"
+      />
+
+      <div class="corner-l">More<br />than a ride<br />it's an<em>Adventure</em><i></i></div>
+
+      <div class="mark">
+        <a href="/"><img src="/images/logo.png" alt="Arizona Dirt Bike Rentals" width="326" height="90" /></a>
+      </div>
+
+      <div class="place">
+        <div class="row">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+          <span>Wickenburg<br />Arizona</span>
+        </div>
+        <i></i>
+      </div>
+
+      <div class="vibes">Desert trails<br />Epic rides<br />Good vibes</div>
+
+      <div class="panel">
+        <h1 class="head">
+          <span class="a">Your next</span>
+          <span class="b">Adventure</span>
+          <span class="c">starts here</span>
+        </h1>
+
+        <p class="tag">Rent a dirt bike or join a guided tour
+          <small>Explore Arizona's incredible desert trails</small>
+        </p>
+
+        <div class="rule"></div>
+
+        <div class="icons">
+          <div class="ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="14" cy="44" r="11"/><circle cx="50" cy="44" r="11"/><path d="M14 44l10-15h14l-6 15"/><path d="M38 29l7-8h9"/><path d="M24 29l-6-8h-7"/><path d="M44 21l-8-3"/><path d="M28 22h11"/></svg>
+            <h3>Dirt bike<br />rentals</h3>
+            <p>Freedom to explore at your own pace</p>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 18l17-7 18 7 17-7v38l-17 7-18-7-17 7z"/><path d="M23 11v38M41 18v38"/><path d="M41 14a7 7 0 00-7 7c0 5 7 12 7 12s7-7 7-12a7 7 0 00-7-7z"/></svg>
+            <h3>Guided<br />tours</h3>
+            <p>Amazing routes with expert guides</p>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="20" r="8"/><path d="M20 52v-8a12 12 0 0124 0v8"/><circle cx="12" cy="27" r="6"/><path d="M3 50v-7a8 8 0 018-8"/><circle cx="52" cy="27" r="6"/><path d="M61 50v-7a8 8 0 00-8-8"/></svg>
+            <h3>Family<br />friendly</h3>
+            <p>Adventure for everyone</p>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M4 48l15-23 9 13 8-12 16 22z"/><path d="M23 32l5-8M38 26l4 6"/><path d="M8 55c8-4 14 2 22-1s16 3 24-2"/></svg>
+            <h3>Trails for<br />all levels</h3>
+            <p>Beginner to advanced</p>
+          </div>
+          <div class="ic">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 39a21 21 0 1141 6H26a16 16 0 01-16-6z"/><path d="M26 45v9"/><circle cx="27" cy="29" r="6"/><path d="M33 29h18"/></svg>
+            <h3>Safety gear<br />included</h3>
+            <p>Ride with confidence</p>
+          </div>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="callrow">
+          <a class="ph" href="tel:5092810156">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M28.5 22.4v4.1a2.1 2.1 0 01-2.3 2.1 27.4 27.4 0 01-11.9-4.3 26.9 26.9 0 01-8.3-8.3A27.4 27.4 0 011.7 4.1 2.1 2.1 0 013.8 1.8h4.1a2.1 2.1 0 012.1 1.8c.2 1.3.5 2.6.9 3.8a2.1 2.1 0 01-.5 2.2L8.7 11.4a21.5 21.5 0 008.3 8.3l1.8-1.7a2.1 2.1 0 012.2-.5c1.2.4 2.5.7 3.8.9a2.1 2.1 0 011.7 2z"/></svg>
+            <span class="num">+1 (509) 281.0156</span>
+          </a>
+          <span class="vr"></span>
+          <a class="wb" href="https://arizonadirtbikerentals.com/">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 1a15 15 0 100 30 15 15 0 000-30zm10.8 9h-4.4a23.4 23.4 0 00-2.7-6.3A12.1 12.1 0 0126.8 10zM16 4.1c1.3 1.8 2.3 3.8 3 6h-6c.7-2.2 1.7-4.2 3-6zM4.4 19a12 12 0 010-6h5a25 25 0 000 6zm1.2 3h4.4a23.4 23.4 0 002.7 6.3A12.1 12.1 0 015.6 22zm4.4-12H5.6a12.1 12.1 0 017.1-6.3A23.4 23.4 0 0010 10zM16 27.9c-1.3-1.8-2.3-3.8-3-6h6c-.7 2.2-1.7 4.2-3 6zM19.7 19h-7.4a22.4 22.4 0 010-6h7.4a22.4 22.4 0 010 6zm-.4 9.3a23.4 23.4 0 002.7-6.3h4.4a12.1 12.1 0 01-7.1 6.3zM22.6 19a25 25 0 000-6h5a12 12 0 010 6z"/></svg>
+            <span class="dom">arizonadirtbikerentals.com</span>
+          </a>
+        </div>
+
+        <div class="bookrow">
+          <div class="script">Book your<br />adventure today</div>
+          <svg class="arw" viewBox="0 0 70 20" aria-hidden="true"><path d="M2 10h62"/><path d="M55 3l9 7-9 7"/></svg>
+          <div class="soc">
+            <span>Follow<br />the adventure</span>
+            <a href="https://www.instagram.com/arizonadirtbikerentals/" aria-label="Instagram"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M22.5 2h-13A7.5 7.5 0 002 9.5v13A7.5 7.5 0 009.5 30h13a7.5 7.5 0 007.5-7.5v-13A7.5 7.5 0 0022.5 2zm4.9 20.5a4.9 4.9 0 01-4.9 4.9h-13a4.9 4.9 0 01-4.9-4.9v-13A4.9 4.9 0 019.5 4.6h13a4.9 4.9 0 014.9 4.9zM16 8.8a7.2 7.2 0 107.2 7.2A7.2 7.2 0 0016 8.8zm0 11.8a4.6 4.6 0 114.6-4.6 4.6 4.6 0 01-4.6 4.6zm9-12.1a1.7 1.7 0 11-1.7-1.7 1.7 1.7 0 011.7 1.7z"/></svg></a>
+            <a href="https://www.facebook.com/arizonadirtbikerentals/" aria-label="Facebook"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18.9 30V17.6h4.2l.6-4.8h-4.8V9.7c0-1.4.4-2.4 2.4-2.4h2.6V3a34.6 34.6 0 00-3.7-.2c-3.7 0-6.3 2.3-6.3 6.5v3.6H9.7v4.8h4.2V30z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hp-alt {
+    --flame: #f4711f;
+    --ember: #ff9c2e;
+    --sand: #e6dccc;
+    --muted: #a9a39a;
+    background: #000;
+    font-family: 'Barlow Condensed', system-ui, sans-serif;
+    line-height: normal;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hp-alt a { color: inherit; text-decoration: none; }
+
+  /* ---- the poster: fixed 2:3 canvas, everything sized in cqw so it can never reflow ---- */
+  .hp-alt .stage {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 945 / 1419;
+    container-type: inline-size;
+    overflow: hidden;
+  }
+  .hp-alt .stage-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hp-alt .corner-l {
+    position: absolute;
+    left: 3.7%;
+    top: 2.4%;
+    color: #0a0a0a;
+    font-size: 3.1cqw;
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+  }
+  .hp-alt .corner-l em { color: var(--ember); font-style: normal; display: block; }
+  .hp-alt .corner-l i {
+    display: block;
+    width: 12.5cqw;
+    height: .75cqw;
+    margin-top: .7cqw;
+    background: #0a0a0a;
+    border-radius: .75cqw;
+    transform: rotate(3deg);
+  }
+
+  .hp-alt .mark { position: absolute; right: 3.5%; top: 3%; width: 40%; }
+  .hp-alt .mark img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 .2cqw 1.2cqw rgba(0, 0, 0, .6));
+  }
+
+  .hp-alt .place { position: absolute; right: 3.6%; top: 21.5%; color: #0a0a0a; text-align: right; }
+  .hp-alt .place .row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1cqw;
+    font-size: 2.7cqw;
+    font-weight: 700;
+    line-height: 1.08;
+    text-transform: uppercase;
+  }
+  .hp-alt .place svg { width: 3cqw; height: 3cqw; fill: #0a0a0a; flex: none; }
+  .hp-alt .place i {
+    display: block;
+    width: 15cqw;
+    height: .6cqw;
+    margin: .8cqw 0 0 auto;
+    background: var(--flame);
+    border-radius: .6cqw;
+    transform: rotate(-2deg);
+  }
+
+  .hp-alt .vibes {
+    position: absolute;
+    right: 2%;
+    top: 28%;
+    color: #0a0a0a;
+    text-align: right;
+    font-size: 2.3cqw;
+    font-weight: 700;
+    line-height: 1.35;
+    text-transform: uppercase;
+    transform: rotate(-4deg);
+  }
+
+  /* black panel, same footprint as the flyer */
+  .hp-alt .panel {
+    position: absolute;
+    left: 18.5%;
+    right: 18.5%;
+    top: 50.7%;
+    bottom: 15.7%;
+    background: rgba(9, 9, 10, .9);
+    padding: 1.680cqw 2.100cqw 1.400cqw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hp-alt .head { font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: .9; }
+  .hp-alt .head .a { display: block; font-size: 4.480cqw; transform: skewX(-6deg); }
+  .hp-alt .head .b {
+    display: block;
+    font-size: 7.700cqw;
+    margin: 0.140cqw 0;
+    transform: skewX(-8deg);
+    background: linear-gradient(96deg, #f0620f 6%, #ff9c2e 48%, #f0620f 94%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hp-alt .head .c { display: block; font-size: 3.780cqw; transform: skewX(-6deg); }
+
+  .hp-alt .tag {
+    margin-top: 1.260cqw;
+    font-size: 1.750cqw;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+  .hp-alt .tag small {
+    display: block;
+    font-size: 1.260cqw;
+    font-weight: 500;
+    letter-spacing: .16em;
+    color: var(--sand);
+    margin-top: 0.420cqw;
+  }
+
+  .hp-alt .rule {
+    height: 0.154cqw;
+    margin: 1.260cqw auto 0;
+    width: 86%;
+    background: linear-gradient(to right, transparent, var(--flame) 15%, var(--flame) 85%, transparent);
+  }
+
+  .hp-alt .icons { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 1.260cqw; }
+  .hp-alt .ic { padding: 0 0.840cqw; border-left: 0.070cqw solid rgba(255, 255, 255, .18); }
+  .hp-alt .ic:first-child { border-left: 0; }
+  .hp-alt .ic svg {
+    width: 3.780cqw;
+    height: 3.780cqw;
+    margin: 0 auto 0.630cqw;
+    stroke: var(--flame);
+    fill: none;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    display: block;
+  }
+  .hp-alt .ic h3 {
+    font-size: 1.400cqw;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .hp-alt .ic p {
+    font-size: 0.945cqw;
+    font-weight: 500;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.420cqw;
+    line-height: 1.25;
+  }
+
+  .hp-alt .callrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.820cqw;
+    margin-top: 1.120cqw;
+  }
+  .hp-alt .callrow a { display: flex; align-items: center; gap: 0.910cqw; font-weight: 700; letter-spacing: .03em; }
+  .hp-alt .callrow svg { fill: var(--flame); flex: none; }
+  .hp-alt .callrow .ph svg { width: 2.800cqw; height: 2.800cqw; }
+  .hp-alt .callrow .wb svg { width: 2.100cqw; height: 2.100cqw; }
+  .hp-alt .num { font-size: 3.220cqw; line-height: 1; }
+  .hp-alt .dom { font-size: 1.750cqw; color: var(--sand); text-transform: uppercase; line-height: 1; }
+  .hp-alt .vr { width: 0.084cqw; height: 3.080cqw; background: rgba(255, 255, 255, .28); }
+
+  .hp-alt .bookrow {
+    display: flex;
+    align-items: center;
+    gap: 1.120cqw;
+    margin-top: auto;
+    padding-top: 0.980cqw;
+    border-top: 0.105cqw solid rgba(244, 113, 31, .45);
+  }
+  .hp-alt .bookrow .script {
+    font-family: 'Caveat', cursive;
+    color: var(--ember);
+    font-size: 2.240cqw;
+    line-height: 1.02;
+    transform: rotate(-4deg);
+    text-align: left;
+  }
+  .hp-alt .bookrow .arw {
+    width: 4.900cqw;
+    height: 1.400cqw;
+    fill: none;
+    stroke: var(--flame);
+    stroke-width: 0.245cqw;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex: none;
+  }
+  .hp-alt .bookrow .soc { margin-left: auto; display: flex; align-items: center; gap: 1.050cqw; }
+  .hp-alt .bookrow .soc span {
+    font-size: 0.945cqw;
+    font-weight: 600;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.2;
+    text-align: right;
+  }
+  .hp-alt .bookrow .soc svg { width: 2.240cqw; height: 2.240cqw; fill: #fff; }
+</style>
