@@ -404,7 +404,16 @@ const reviews = [
      banner and the black panel drops below it, full viewport width, so the
      copy is actually readable. ---- */
   @media (max-width: 800px) {
-    .hp-alt .stage { aspect-ratio: auto; }
+    .hp-alt .stage {
+      aspect-ratio: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* order: headline band -> photo -> panel */
+    .hp-alt .corner-l { order: 1; }
+    .hp-alt .stage-photo { order: 2; }
+    .hp-alt .panel { order: 3; }
 
     .hp-alt .stage-photo {
       position: relative;
@@ -415,13 +424,34 @@ const reviews = [
       object-position: center 6%;
     }
 
-    /* the poster's overlay callouts are built for the full 2:3 canvas and
-       don't place well on a phone-width banner — the header already carries
-       the logo, and the panel below carries the message */
-    .hp-alt .corner-l,
+    /* the logo, location and vibes callouts are built for the full poster
+       and drop away on mobile; the header carries the logo */
     .hp-alt .mark,
     .hp-alt .place,
     .hp-alt .vibes { display: none; }
+
+    /* "More than a ride / it's an Adventure" becomes the mobile hero
+       headline, on the dark ground above the photo */
+    .hp-alt .corner-l {
+      position: static;
+      inset: auto;
+      transform: none;
+      width: 100%;
+      text-align: center;
+      color: var(--sand);
+      padding: 40px 20px 34px;
+      font-size: 9cqw;
+      line-height: 1.08;
+    }
+    .hp-alt .corner-l em { color: var(--ember); }
+    .hp-alt .corner-l i {
+      width: 32cqw;
+      height: 1.8cqw;
+      margin: 3.5cqw auto 0;
+      background: var(--ember);
+      border-radius: 1.8cqw;
+      transform: none;
+    }
 
     /* panel: full-width block, no longer absolutely positioned */
     .hp-alt .panel {
