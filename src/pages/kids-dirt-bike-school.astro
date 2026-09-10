@@ -65,31 +65,8 @@ const faqSchema = {
     },
   })),
 };
-
-const reviews = [
-  { quote: "Probably the best experience we've ever had as a family. We had experienced and novice riders and we were all able to ride, push our limits, and get the adrenaline pumping. We'll definitely make this an annual event.", author: "Greg Corniea" },
-  { quote: "This riding experience was perfect and well worth a quick flight from Oregon. Doug had everything dialed for my son and I to have a great couple of days of riding. Looking forward to booking again soon.", author: "Darbey Budd" },
-  { quote: "One of the top 3 riding days of my life. Doug is an awesome host, whether it's to put you at ease or give you a riding tip. Well-prepared KTM and Husky with top of the line accessories.", author: "Charles Lapierre" },
-  { quote: "I don't have a lot of riding experience, and honestly I'm scared of heights, but Doug was patient and understanding. We've continued to rent because he's a wealth of information and a blast to be around.", author: "Jordan Moyer" },
-  { quote: "Doug was legendary. My son had a blast and will definitely be doing it again. Top quality bikes, all the gear we needed, and a great area for beginners and experienced riders.", author: "Brandy McDonell" },
-  { quote: "Doug did a great job assessing my skills and picking the right trails. I'll do this again next time I visit Phoenix.", author: "Doug Cooper" },
-];
 ---
 <Layout title={title} description={description} schema={[schema, faqSchema]}>
-
-  <!-- Hero (ported from the homepage) -->
-  <section class="hp-hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <span class="eyebrow">Wickenburg, Arizona · Since 2010</span>
-      <h1 class="display">Give them a day they'll never stop <em>talking about.</em></h1>
-      <p class="hero-sub">Unforgettable guided dirt bike rides in the Arizona desert. We bring the bikes, the gear, and 15 years of local knowledge. Perfect for families, kids, and advanced riders.</p>
-      <div class="hero-ctas">
-        <a href="tel:5092810156" class="btn btn-big" target="_blank" rel="noopener noreferrer">Call Doug to Reserve 509-281-0156</a>
-      </div>
-      <p class="hero-call-note">Every ride starts with a quick call. You'll talk directly to Doug.</p>
-    </div>
-  </section>
 
   <div class="page-hero">
     <div class="wrap hero-inner">
@@ -183,36 +160,6 @@ const reviews = [
     </div>
   </section>
 
-  <!-- Why Wickenburg (ported from the homepage) -->
-  <section class="why" id="why">
-    <div class="wrap">
-      <div class="why-grid">
-        <div class="why-image">
-          <img src="/images/father-son.jpg" alt="Father and son in full riding gear giving thumbs up" />
-        </div>
-        <div class="why-text">
-          <div class="section-label">Why Wickenburg</div>
-          <h2 class="display section-title">15 years in the saddle. Thousands of happy riders.</h2>
-          <p>That's why people fly in from Oregon, drive down from Canada, and come back year after year.</p>
-          <div class="stats">
-            <div>
-              <div class="stat-num display">15+</div>
-              <div class="stat-label">Years guiding</div>
-            </div>
-            <div>
-              <div class="stat-num display">100+</div>
-              <div class="stat-label">5-star reviews</div>
-            </div>
-            <div>
-              <div class="stat-num display">$375</div>
-              <div class="stat-label">All-inclusive day</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="copy-section">
     <div class="wrap">
       <div class="section-label">The Location</div>
@@ -249,45 +196,6 @@ const reviews = [
     </div>
   </section>
 
-  <!-- Meet Doug (ported from the homepage) -->
-  <section class="meet" id="meet">
-    <div class="wrap">
-      <div class="meet-grid">
-        <div class="meet-img">
-          <img src="/images/doug-portrait.webp" alt="Doug McDonald, owner and guide" />
-        </div>
-        <div>
-          <div class="section-label">Your Guide</div>
-          <h2 class="display">Meet Doug.</h2>
-          <p>Doug McDonald has been riding these trails and running this business since 2010. He's the guy who picks you up, sets up your bike, teaches the skills, and leads the ride.</p>
-          <p>He'll meet you where you are as a rider and build a day around what you want out of it. That's why people come back year after year.</p>
-          <a href="/contact-us/" class="btn" style="margin-top: 12px;">Plan Your Day with Doug</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews (ported from the homepage) -->
-  <section class="proof" id="reviews">
-    <div class="wrap">
-      <div class="proof-header">
-        <div class="section-label">What Riders Say</div>
-        <h2 class="display section-title" style="margin: 0 auto 20px;">Over 150 five-star reviews.</h2>
-        <div class="stars">★★★★★</div>
-        <span class="count">Google &amp; Facebook verified</span>
-      </div>
-      <div class="reviews">
-        {reviews.map(r => (
-          <div class="review">
-            <div class="review-stars">★★★★★</div>
-            <p>{r.quote}</p>
-            <cite>{r.author}</cite>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="call-cta">
     <div class="section-label">Book Your Day</div>
     <h2 class="display cta-heading">Your kids will remember this forever</h2>
@@ -301,70 +209,6 @@ const reviews = [
 </Layout>
 
 <style>
-  /* Hero (ported from the homepage; classes namespaced to avoid clashing with .page-hero below) */
-  .hp-hero {
-    position: relative;
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: var(--ink);
-    color: var(--cream);
-  }
-  .hp-hero .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url('/images/hero-main.webp') center/cover no-repeat;
-  }
-  .hp-hero .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(95deg,
-      rgba(23,17,12,0.78) 0%,
-      rgba(23,17,12,0.55) 35%,
-      rgba(23,17,12,0.15) 65%,
-      rgba(23,17,12,0) 100%);
-  }
-  @media (max-width: 800px) {
-    .hp-hero .hero-bg::after {
-      background: linear-gradient(180deg,
-        rgba(23,17,12,0.85) 0%,
-        rgba(23,17,12,0.55) 55%,
-        rgba(23,17,12,0.35) 100%);
-    }
-  }
-  .hp-hero .hero-content {
-    position: relative;
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 80px 24px 100px;
-    width: 100%;
-  }
-  .hp-hero h1 {
-    font-size: clamp(56px, 9.5vw, 132px);
-    max-width: 14ch;
-    margin-bottom: 26px;
-    color: var(--cream);
-    text-shadow: 0 2px 30px rgba(0,0,0,0.35);
-  }
-  .hp-hero h1 em { font-style: normal; color: var(--rust); }
-  .hp-hero .eyebrow { font-size: 18px; }
-  .hp-hero .hero-sub {
-    font-size: clamp(17px, 1.8vw, 21px);
-    font-weight: 700;
-    max-width: 48ch;
-    margin-bottom: 40px;
-    color: rgba(253,252,249,0.85);
-  }
-  .hp-hero .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-  .hp-hero .hero-call-note {
-    margin-top: 14px;
-    font-size: clamp(16px, 1.5vw, 19px);
-    color: #ffffff;
-    font-style: italic;
-  }
-
   .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
   .hero-inner { display: grid; gap: 60px; align-items: center; }
   @media (min-width: 800px) { .hero-inner { grid-template-columns: 1fr 1fr; } }
@@ -432,38 +276,6 @@ const reviews = [
   .copy-section p { font-size: 19px; color: var(--leather-soft); max-width: 62ch; margin-bottom: 16px; }
   .copy-section p:last-child { margin-bottom: 0; }
 
-  /* Why Wickenburg (ported from the homepage) */
-  .why { background: var(--cream); padding: 100px 0; border-bottom: 1px solid var(--line); }
-  .why-grid { display: grid; gap: 64px; align-items: center; }
-  @media (min-width: 900px) { .why-grid { grid-template-columns: 1fr 1fr; } }
-  .why-image { position: relative; aspect-ratio: 4/5; overflow: hidden; border: 1px solid var(--line); }
-  .why-image img { width: 100%; height: 100%; object-fit: cover; }
-  .why-image::before {
-    content: 'SINCE 2010';
-    position: absolute;
-    top: 0; right: 0;
-    background: var(--rust);
-    color: #fff;
-    padding: 12px 18px;
-    font-weight: 800;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    z-index: 2;
-  }
-  .why-text p { font-size: 19px; color: var(--leather-soft); margin-bottom: 20px; max-width: 48ch; }
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; padding-top: 44px; border-top: 3px solid var(--rust); }
-  .stat-num { font-size: 60px; line-height: 0.9; color: var(--leather); }
-  .stat-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--leather-soft); font-weight: 700; margin-top: 8px; }
-
-  /* Meet Doug (ported from the homepage) */
-  .meet { padding: 100px 0; background: var(--cream-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .meet-grid { display: grid; gap: 48px; align-items: center; }
-  @media (min-width: 800px) { .meet-grid { grid-template-columns: 1fr 1.3fr; } }
-  .meet-img { aspect-ratio: 1/1; overflow: hidden; border: 1px solid var(--line); }
-  .meet-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-  .meet h2 { font-size: clamp(40px, 5.5vw, 72px); margin-bottom: 24px; color: var(--leather); }
-  .meet p { font-size: 19px; color: var(--leather-soft); margin-bottom: 16px; max-width: 52ch; }
-
   /* What to bring */
   .bring-section { background: var(--cream-deep); padding: 100px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .gear-list { padding-left: 0; margin-top: 40px; max-width: 62ch; }
@@ -485,46 +297,6 @@ const reviews = [
   .faq-item:first-child { padding-top: 0; }
   .faq-q { font-size: 20px; font-weight: 800; color: var(--leather); margin-bottom: 10px; }
   .faq-a { font-size: 19px; color: var(--leather-soft); }
-
-  /* Reviews (ported from the homepage) */
-  .proof {
-    padding: 100px 0;
-    background: var(--cream-soft);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .proof-header { text-align: center; margin-bottom: 68px; }
-  .proof-header .section-label { justify-content: center; }
-  .proof-header h2 { margin: 0 auto 20px; }
-  .proof-header .stars { font-size: 34px; letter-spacing: 8px; color: var(--rust); }
-  .proof-header .count {
-    display: block;
-    font-size: 13px;
-    color: var(--leather-soft);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-top: 12px;
-    font-weight: 600;
-  }
-  .reviews { display: grid; gap: 24px; }
-  @media (min-width: 700px) { .reviews { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1000px) { .reviews { grid-template-columns: repeat(3, 1fr); } }
-  .review {
-    background: #fff;
-    padding: 32px;
-    border: 1px solid var(--line-soft);
-    border-top: 4px solid var(--rust);
-  }
-  .review-stars { color: var(--rust); font-size: 16px; letter-spacing: 3px; margin-bottom: 16px; }
-  .review p { font-size: 19px; line-height: 1.6; color: var(--leather); margin-bottom: 20px; }
-  .review cite {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--rust);
-  }
 
   /* Final CTA */
   .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 90px 24px 80px; border-top: 3px solid var(--rust); }
