@@ -400,6 +400,68 @@ const reviews = [
   }
   .hp-alt .bookrow .soc svg { width: 2.240cqw; height: 2.240cqw; fill: #fff; }
 
+  /* ---- Mobile: the poster stops being a fixed canvas. The photo becomes a
+     banner and the black panel drops below it, full viewport width, so the
+     copy is actually readable. ---- */
+  @media (max-width: 800px) {
+    .hp-alt .stage { aspect-ratio: auto; }
+
+    .hp-alt .stage-photo {
+      position: relative;
+      inset: auto;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-position: center 16%;
+    }
+
+    /* the poster's overlay callouts are built for the full 2:3 canvas and
+       don't place well on a phone-width banner — the header already carries
+       the logo, and the panel below carries the message */
+    .hp-alt .corner-l,
+    .hp-alt .mark,
+    .hp-alt .place,
+    .hp-alt .vibes { display: none; }
+
+    /* panel: full-width block, no longer absolutely positioned */
+    .hp-alt .panel {
+      position: static;
+      inset: auto;
+      width: 100%;
+      padding: 34px 20px 30px;
+    }
+
+    .hp-alt .head .a { font-size: 7cqw; }
+    .hp-alt .head .b { font-size: 13cqw; margin: 1cqw 0; }
+    .hp-alt .head .c { font-size: 6cqw; }
+
+    .hp-alt .tag { font-size: 3.6cqw; margin-top: 4.5cqw; }
+    .hp-alt .tag small { font-size: 3cqw; margin-top: 2cqw; }
+
+    .hp-alt .rule { height: 2px; margin-top: 5cqw; }
+
+    .hp-alt .icons { grid-template-columns: repeat(2, 1fr); gap: 26px 8px; margin-top: 5cqw; }
+    .hp-alt .ic { border-left: 0; padding: 0 6px; }
+    .hp-alt .ic:last-child { grid-column: 1 / -1; }
+    .hp-alt .ic svg { width: 10cqw; height: 10cqw; margin-bottom: 2.5cqw; stroke-width: 2.2; }
+    .hp-alt .ic h3 { font-size: 3.9cqw; }
+    .hp-alt .ic p { font-size: 3.1cqw; margin-top: 1.6cqw; }
+
+    .hp-alt .callrow { flex-wrap: wrap; gap: 8px 16px; margin-top: 6cqw; }
+    .hp-alt .callrow a { gap: 2.4cqw; }
+    .hp-alt .callrow .ph svg { width: 6cqw; height: 6cqw; }
+    .hp-alt .callrow .wb svg { width: 5cqw; height: 5cqw; }
+    .hp-alt .num { font-size: 7.5cqw; }
+    .hp-alt .dom { font-size: 3.9cqw; }
+    .hp-alt .vr { display: none; }
+
+    .hp-alt .bookrow { flex-wrap: wrap; gap: 12px 16px; padding-top: 5cqw; }
+    .hp-alt .bookrow .script { font-size: 6cqw; }
+    .hp-alt .bookrow .soc { margin-left: auto; }
+    .hp-alt .bookrow .soc span { font-size: 2.8cqw; }
+    .hp-alt .bookrow .soc svg { width: 6cqw; height: 6cqw; }
+  }
+
   /* Meet Doug */
   .meet { padding: 120px 0; background: var(--cream-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .meet-grid { display: grid; gap: 48px; align-items: center; }
