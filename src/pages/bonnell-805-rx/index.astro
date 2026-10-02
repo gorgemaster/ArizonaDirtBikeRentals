@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Rent the Bonnell 805 RX Electric Dirt Bike | Arizona Dirt Bike Rentals';
+const description = 'Ride the new Bonnell 805 RX electric dirt bike on guided desert singletrack in Wickenburg, Arizona. 56 hp, 218 lbs, nearly silent. Gear, guide, and lunch included.';
+const canonical = 'https://arizonadirtbikerentals.com/bonnell-805-rx/';
+const ogImage = 'https://arizonadirtbikerentals.com/images/bonnell-805-hero.webp';
+const heroAlt = 'Rider sliding the Bonnell 805 RX through a sandy desert berm at sunset';
+const trailAlt = 'Bonnell 805 RX parked on a desert ridge at sunset';
+const powerAlt = 'Rider wheelieing the Bonnell 805 RX electric dirt bike on a dirt trail';
+const detailAlt = 'Side profile of the Bonnell 805 RX electric dirt bike';
+
+const specs = [
+  '56 hp (42 kW) electric motor',
+  '805 Nm of torque at the rear wheel',
+  '218 lbs',
+  'Sirris suspension with 9.6 inches of travel',
+  'Five ride modes plus reverse, hill hold, and walk mode',
+  'Adjustable footpegs and handlebars',
+  'Swappable 3.9 kWh battery',
+];
+
+const faqs = [
+  { q: 'Do I need electric bike experience?', a: 'No. Doug will set the ride mode for your skill level and walk you through the controls before you head out.' },
+  { q: 'Is it as fast as a gas bike?', a: "Faster than most. It's rated at over 80 mph, though out here it's the instant torque you'll notice, not the top speed." },
+  // TODO: add these two once answers are filled in.
+  // { q: 'How long does the battery last on a ride?', a: 'TODO' },
+  // { q: 'Can I ride it alongside friends on gas bikes?', a: 'TODO' },
+];
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Bonnell 805 RX Electric Dirt Bike Rental',
+  serviceType: 'Guided Electric Dirt Bike Rental',
+  description,
+  url: canonical,
+  provider: { '@type': 'LocalBusiness', name: 'Arizona Dirt Bike Rentals', url: 'https://arizonadirtbikerentals.com' },
+  areaServed: { '@type': 'City', name: 'Wickenburg', containedInPlace: { '@type': 'State', name: 'Arizona' } },
+  offers: { '@type': 'Offer', price: '375', priceCurrency: 'USD' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Layout title={title} description={description} canonical={canonical} ogImage={ogImage} ogImageAlt={heroAlt} schema={[productSchema, faqSchema]}>
+
+  <div class="page-hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <div class="section-label">New to the Fleet · Electric</div>
+        <h1 class="display">Ride the Bonnell 805 RX in the Arizona desert.</h1>
+        <p class="hero-sub">The 805 RX is the newest electric dirt bike on the market, and it's one of the most talked-about bikes of 2026. It weighs less than most 250s, makes more power than most 450s, and does it almost without a sound. We've got one set up and ready for the trails around Wickenburg, and you can ride it on any guided day.</p>
+        <a href="tel:5092810156" class="btn btn-big">Call Doug to Reserve 509-281-0156</a>
+      </div>
+      <div class="img-frame hero-image">
+        <img src="/images/bonnell-805-hero.webp" alt={heroAlt} width="2000" height="1334" />
+      </div>
+    </div>
+  </div>
+
+  <section class="copy-section">
+    <div class="wrap split-grid">
+      <div class="img-frame split-photo">
+        <img src="/images/bonnell-805-power.webp" alt={powerAlt} width="1200" height="800" loading="lazy" />
+      </div>
+      <div class="split-text">
+      <div class="section-label">The Bike</div>
+      <h2 class="display section-title">What makes it different</h2>
+      <p>Most electric dirt bikes force a choice between light and fast. The 805 RX doesn't. At 218 pounds it's easy to move around on tight singletrack, and with 56 horsepower and instant torque it will climb anything you point it at. Five ride modes let us set the power delivery to match your experience, from smooth and forgiving to full send. It also has hill hold and reverse, which make the tricky spots on a desert ride a lot less stressful.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="wrap split-grid">
+      <div class="split-text">
+        <div class="section-label">By the Numbers</div>
+        <h2 class="display section-title">Spec snapshot</h2>
+        <ul class="gear-list">
+          {specs.map(item => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="img-frame split-photo">
+        <img src="/images/bonnell-805-detail.webp" alt={detailAlt} width="1200" height="1000" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="copy-section">
+    <div class="wrap split-grid">
+      <div class="img-frame split-photo">
+        <img src="/images/bonnell-805-trail.webp" alt={trailAlt} width="1200" height="800" loading="lazy" />
+      </div>
+      <div class="split-text">
+        <div class="section-label">Quiet Riding</div>
+        <h2 class="display section-title">Why electric works out here</h2>
+        <p>The desert is quiet, and on the 805 RX you stay part of that. You hear your tires, your buddies, and the trail instead of an engine. There are no gears to shift, so you can put all your attention on line choice and body position. Riders who've only ridden gas bikes are usually grinning within the first mile.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="copy-section alt">
+    <div class="wrap">
+      <div class="section-label">The Riders</div>
+      <h2 class="display section-title">Who it's for</h2>
+      <p>Experienced riders who want to try the bike everyone's talking about before spending $8,250 on one. Gas riders curious about electric. And newer adult riders who'll benefit from a bike whose power can be dialed down while they build confidence.</p>
+    </div>
+  </section>
+
+  <section class="copy-section">
+    <div class="wrap">
+      <div class="section-label">Your Day</div>
+      <h2 class="display section-title">What's included</h2>
+      <p>Your day includes the 805 RX, full riding gear, a guided ride on trails picked for your level, and lunch. Pickup is available, and se habla español.</p>
+    </div>
+  </section>
+
+  <div class="price-strip">
+    <div class="price-strip-inner">
+      <div class="price-tag">
+        $375
+        <span>PER RIDER / PER DAY</span>
+      </div>
+      <ul class="price-includes">
+        <li>Bonnell 805 RX</li>
+        <li>Full riding gear</li>
+        <li>Guided trail time</li>
+        <li>Lunch provided</li>
+        <li>Pickup available</li>
+        <li>Se habla español</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="faq-section">
+    <div class="wrap">
+      <div class="section-label">Common Questions</div>
+      <h2 class="display section-title">Questions</h2>
+      <div class="faq-list">
+        {faqs.map(item => (
+          <div class="faq-item">
+            <p class="faq-q">{item.q}</p>
+            <p class="faq-a">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="call-cta">
+    <div class="section-label">Ready to Ride?</div>
+    <h2 class="display cta-heading">Be one of the first to ride the 805 RX.</h2>
+    <p class="cta-lede">Call or text Doug, tell him you want the 805 RX, and he'll get you on the calendar.</p>
+    <p class="reserve-label">Reserve Your Day</p>
+    <a href="tel:5092810156" class="final-phone display">509 · 281 · 0156</a>
+    <p class="final-note">Phone &amp; text · Se habla español</p>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { background: var(--cream-deep); border-bottom: 1px solid var(--line); padding: 80px 0; }
+  .hero-inner { display: grid; gap: 60px; align-items: center; }
+  @media (min-width: 800px) { .hero-inner { grid-template-columns: 1fr 1fr; } }
+  .page-hero h1 { font-size: clamp(40px, 5.5vw, 80px); line-height: 1.05; color: var(--leather); max-width: 18ch; margin-bottom: 20px; }
+  .hero-sub { font-size: 21px; font-weight: 500; color: var(--leather-soft); max-width: 54ch; margin-bottom: 32px; }
+
+  .img-frame { align-self: center; }
+  .img-frame { overflow: hidden; border: 1px solid var(--line); background: var(--line-soft); }
+  .img-frame img { width: 100%; height: auto; display: block; }
+
+  .split-section { background: var(--cream-deep); padding: 100px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .split-grid { display: grid; gap: 64px; align-items: center; }
+  @media (min-width: 800px) { .split-grid { grid-template-columns: 1fr 1fr; } }
+  .split-text p { font-size: 19px; color: var(--leather-soft); max-width: 54ch; margin-bottom: 16px; }
+  .split-text p:last-child { margin-bottom: 0; }
+
+  .copy-section { background: var(--cream); padding: 100px 0; }
+  .copy-section.alt { background: var(--cream-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .copy-section p { font-size: 19px; color: var(--leather-soft); max-width: 62ch; margin-bottom: 16px; }
+  .copy-section .split-text p { max-width: 54ch; }
+  .copy-section p:last-child { margin-bottom: 0; }
+
+  .gear-list { padding-left: 0; margin-top: 40px; max-width: 62ch; }
+  .gear-list li {
+    list-style: none;
+    padding: 10px 0 10px 28px;
+    position: relative;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 21px;
+    color: var(--leather-soft);
+  }
+  .gear-list li::before { content: '→'; position: absolute; left: 0; color: var(--rust); font-weight: 900; }
+
+  /* Price strip (same as homepage) */
+  .price-strip { background: var(--rust); color: #fff; padding: 40px 24px; }
+  .price-strip-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; }
+  .price-tag {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: 84px;
+    line-height: 0.82;
+    color: #fff;
+    padding-right: 40px;
+    border-right: 3px solid rgba(255,255,255,0.3);
+  }
+  .price-tag span { display: block; font-size: 13px; letter-spacing: 0.16em; margin-top: 12px; font-family: 'DM Sans', sans-serif; font-weight: 700; }
+  .price-includes { display: flex; flex-wrap: wrap; gap: 10px 32px; font-size: 20px; font-weight: 600; }
+  .price-includes li { list-style: none; position: relative; padding-left: 24px; }
+  .price-includes li::before { content: '→'; position: absolute; left: 0; font-weight: 900; }
+  @media (max-width: 900px) {
+    .price-strip-inner { grid-template-columns: 1fr; gap: 24px; }
+    .price-tag { border-right: none; border-bottom: 3px solid rgba(255,255,255,0.3); padding: 0 0 24px; font-size: 68px; }
+  }
+
+  .faq-section { background: var(--cream); padding: 100px 0; }
+  .faq-list { margin-top: 48px; max-width: 76ch; }
+  .faq-item { padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+  .faq-item:first-child { padding-top: 0; }
+  .faq-q { font-size: 20px; font-weight: 800; color: var(--leather); margin-bottom: 10px; }
+  .faq-a { font-size: 19px; color: var(--leather-soft); }
+
+  .call-cta { background: var(--ink); color: var(--cream); text-align: center; padding: 90px 24px 80px; border-top: 3px solid var(--rust); }
+  .call-cta .section-label { justify-content: center; }
+  .cta-heading { font-size: clamp(44px, 6.5vw, 84px); color: var(--cream); margin: 8px auto 24px; max-width: 18ch; }
+  .cta-lede { font-size: 19px; max-width: 64ch; margin: 0 auto 40px; color: rgba(253,252,249,0.8); }
+  .reserve-label { font-size: clamp(20px, 2vw, 28px); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .final-phone { font-size: clamp(48px, 7vw, 96px); color: var(--rust); text-decoration: none; display: block; margin: 16px 0; letter-spacing: -0.01em; }
+  .final-phone:hover { color: var(--cream); }
+  .final-note { font-size: 19px; letter-spacing: 0.18em; text-transform: uppercase; color: #ffffff; font-weight: 600; }
+</style>
